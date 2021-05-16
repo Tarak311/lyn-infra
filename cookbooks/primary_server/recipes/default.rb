@@ -9,6 +9,6 @@ include_recipe 'chef-client::default'
 
 dnf_package 'base-tools' do
     flush_cache [ :after ]
-    package_name      %w(net-tools python3 NetworkManager-wifi)
+    package_name      %w(net-tools python3 NetworkManager-wifi podman)
     action            :upgrade # defaults to :install if not specified
   end
