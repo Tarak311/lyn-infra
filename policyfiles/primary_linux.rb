@@ -4,7 +4,7 @@
 # https://docs.chef.io/policyfile/
 
 # A name that describes what the system you're building with Chef does.
-name 'primary_server'
+name 'primary_linux'
 
 # Where to find external cookbooks:
 default_source :supermarket
@@ -13,6 +13,6 @@ default_source :supermarket
 run_list 'primary_server::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'primary_server', path: '.'
+cookbook 'primary_server', path: '../cookbooks/primary_server'
 cookbook 'os-hardening', '= 4.0.0'
 cookbook 'chef-client', '~> 12.3.4', :supermarket

@@ -1,0 +1,137 @@
+{
+  "revision_id": "98fca9f0f67a2b83e037b3677a14e9301f42efed1f378eb72cf7e58d6ba9d176",
+  "name": "primary_linux",
+  "run_list": [
+    "recipe[primary_server::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "chef-client": {
+      "version": "12.3.4",
+      "identifier": "9e4148496618fe2253acba978d67921a5dc0b48a",
+      "dotted_decimal_identifier": "44544825045162238.9662150538136935.160641939715210",
+      "cache_key": "chef-client-12.3.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/chef-client/versions/12.3.4/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/chef-client/versions/12.3.4/download",
+        "version": "12.3.4"
+      }
+    },
+    "cron": {
+      "version": "7.0.1",
+      "identifier": "6ffc028a0d52d1fe42884e7d6f0f42fe63a6c06a",
+      "dotted_decimal_identifier": "31520810251145937.71567797284335375.73660360999018",
+      "cache_key": "cron-7.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.1/download",
+        "version": "7.0.1"
+      }
+    },
+    "logrotate": {
+      "version": "3.0.2",
+      "identifier": "388ae44cb74ea2dd4a74c0acb61d098a17f596b9",
+      "dotted_decimal_identifier": "15915311840054946.62287835162261021.10488712107705",
+      "cache_key": "logrotate-3.0.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/logrotate/versions/3.0.2/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/logrotate/versions/3.0.2/download",
+        "version": "3.0.2"
+      }
+    },
+    "os-hardening": {
+      "version": "4.0.0",
+      "identifier": "e20b98be94004b4013698889ce3ce232f88fbb27",
+      "dotted_decimal_identifier": "63626095396913227.18035742492708412.248708546411303",
+      "cache_key": "os-hardening-4.0.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/os-hardening/versions/4.0.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/os-hardening/versions/4.0.0/download",
+        "version": "4.0.0"
+      }
+    },
+    "primary_server": {
+      "version": "0.1.0",
+      "identifier": "97c8729b7a51f6e6db99ce037902c4cc274a8f16",
+      "dotted_decimal_identifier": "42723116043620854.64980698276264194.216381111570198",
+      "source": "../cookbooks/primary_server",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/Tarak311/lyn-infra.git",
+        "revision": "6b9219aaae02685f4ec2658e643735ab2803ddfa",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/trial"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/primary_server"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "chef-client",
+        "= 12.3.4"
+      ],
+      [
+        "cron",
+        "= 7.0.1"
+      ],
+      [
+        "logrotate",
+        "= 3.0.2"
+      ],
+      [
+        "os-hardening",
+        "= 4.0.0"
+      ],
+      [
+        "primary_server",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "chef-client (12.3.4)": [
+        [
+          "cron",
+          ">= 4.2.0"
+        ],
+        [
+          "logrotate",
+          ">= 1.9.0"
+        ]
+      ],
+      "cron (7.0.1)": [
+
+      ],
+      "logrotate (3.0.2)": [
+
+      ],
+      "os-hardening (4.0.0)": [
+
+      ],
+      "primary_server (0.1.0)": [
+        [
+          "os-hardening",
+          ">= 0.0.0"
+        ],
+        [
+          "chef-client",
+          ">= 0.0.0"
+        ]
+      ]
+    }
+  }
+}
