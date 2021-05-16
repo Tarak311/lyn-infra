@@ -1,5 +1,5 @@
 {
-  "revision_id": "98fca9f0f67a2b83e037b3677a14e9301f42efed1f378eb72cf7e58d6ba9d176",
+  "revision_id": "2b6d87cbb386064bc0654d727e8d3201b83bdd428a402a2a5bb1b4c74b2c6a2f",
   "name": "primary_linux",
   "run_list": [
     "recipe[primary_server::default]"
@@ -54,18 +54,18 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "97c8729b7a51f6e6db99ce037902c4cc274a8f16",
-      "dotted_decimal_identifier": "42723116043620854.64980698276264194.216381111570198",
+      "identifier": "953e135a99ab512a5a2fb09c62ef5c7cf49b7552",
+      "dotted_decimal_identifier": "42008024375208785.11921109894849263.101691749528914",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "6b9219aaae02685f4ec2658e643735ab2803ddfa",
+        "revision": "ebb6c3a335e62a95a825830bee79b75d62235a39",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/trial"
+          "origin/master"
         ]
       },
       "source_options": {
