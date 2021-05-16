@@ -12,3 +12,8 @@ dnf_package 'base-tools' do
     package_name      %w(net-tools python3 NetworkManager-wifi podman)
     action            :upgrade # defaults to :install if not specified
   end
+
+
+yumgroup 'Development Tools' do
+  action :upgrade
+end

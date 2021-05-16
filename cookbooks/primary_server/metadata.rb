@@ -20,3 +20,4 @@ chef_version '>= 15.0'
 
 depends 'os-hardening'
 depends 'chef-client'
+depends  'yumgroup'
