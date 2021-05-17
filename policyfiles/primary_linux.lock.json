@@ -1,5 +1,5 @@
 {
-  "revision_id": "755f0bb3a2424d7f67038d606268cdacb709ca6bfa97530c7a9b765d0a0f5b85",
+  "revision_id": "a97af7fa5495040824acc782b1f7d0fbb2a07953029aad64ce2027f5561caa76",
   "name": "primary_linux",
   "run_list": [
     "recipe[primary_server::default]"
@@ -54,14 +54,14 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "93565d845ef1b102da454bb35d2a9e88e73c2d42",
-      "dotted_decimal_identifier": "41471781229228465.802941111065898.174310832221506",
+      "identifier": "aeab438b90a4f4dce12ecdc07a76756de67700ec",
+      "dotted_decimal_identifier": "49164952540325108.62172086013033078.129114878443756",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "aa2a005317a12eb113734775f85d8b38f4f3f069",
+        "revision": "0ab280e94b4ba7adb2aa0d148912c0ad4d2cf5ba",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -70,6 +70,17 @@
       },
       "source_options": {
         "path": "../cookbooks/primary_server"
+      }
+    },
+    "yumgroup": {
+      "version": "0.6.0",
+      "identifier": "76e63e848676b7eb6bf33e87ee372fd851c07f7f",
+      "dotted_decimal_identifier": "33467203437622967.66265311997324855.52606131011455",
+      "cache_key": "yumgroup-0.6.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yumgroup/versions/0.6.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yumgroup/versions/0.6.0/download",
+        "version": "0.6.0"
       }
     }
   },
@@ -100,6 +111,10 @@
       [
         "primary_server",
         ">= 0.0.0"
+      ],
+      [
+        "yumgroup",
+        "= 0.6.0"
       ]
     ],
     "dependencies": {
@@ -130,7 +145,14 @@
         [
           "chef-client",
           ">= 0.0.0"
+        ],
+        [
+          "yumgroup",
+          ">= 0.0.0"
         ]
+      ],
+      "yumgroup (0.6.0)": [
+
       ]
     }
   }

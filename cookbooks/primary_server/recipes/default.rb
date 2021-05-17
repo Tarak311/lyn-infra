@@ -6,14 +6,18 @@
 include_recipe 'os-hardening::default'
 include_recipe 'chef-client::default'
 
-
 dnf_package 'base-tools' do
-    flush_cache [ :after ]
-    package_name      %w(net-tools python3 NetworkManager-wifi podman)
-    action            :upgrade # defaults to :install if not specified
-  end
-
+  flush_cache [ :after ]
+  package_name   %w(net-tools python3 NetworkManager-wifi podman)
+  action         :upgrade # defaults to :install if not specified
+end
 
 yumgroup 'Development Tools' do
   action :upgrade
+end
+
+primary_server_site "update-linux" 
+
+selinux_state "SELinux Permissive" do
+  action :permissive
 end
