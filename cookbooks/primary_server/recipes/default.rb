@@ -16,7 +16,9 @@ yumgroup 'Development Tools' do
   action :upgrade
 end
 
-primary_server_site "update-linux" 
+primary_server_update "update-linux" do
+  action :upgrade
+end
 
 selinux_state "SELinux Permissive" do
   action :permissive

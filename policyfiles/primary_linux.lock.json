@@ -1,5 +1,5 @@
 {
-  "revision_id": "a97af7fa5495040824acc782b1f7d0fbb2a07953029aad64ce2027f5561caa76",
+  "revision_id": "b1ac1155854d658f3ec26bc26e9c4cf727d762796d8517ebe68338cf44ef3996",
   "name": "primary_linux",
   "run_list": [
     "recipe[primary_server::default]"
@@ -54,22 +54,33 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "aeab438b90a4f4dce12ecdc07a76756de67700ec",
-      "dotted_decimal_identifier": "49164952540325108.62172086013033078.129114878443756",
+      "identifier": "7f2c6d3e616bcc3cf5e68281a299128a94166ee7",
+      "dotted_decimal_identifier": "35796169751882700.17158868983456409.20386399284967",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "0ab280e94b4ba7adb2aa0d148912c0ad4d2cf5ba",
-        "working_tree_clean": false,
-        "published": true,
+        "revision": "90df580a7d8cad680168bc3933e6f96b8efbb93b",
+        "working_tree_clean": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/master"
+
         ]
       },
       "source_options": {
         "path": "../cookbooks/primary_server"
+      }
+    },
+    "selinux": {
+      "version": "3.1.1",
+      "identifier": "bf76c6d8a36159bf83ae9a14d6cf99ffd180acb7",
+      "dotted_decimal_identifier": "53892316961923417.53906506484340431.169324010581175",
+      "cache_key": "selinux-3.1.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/selinux/versions/3.1.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/selinux/versions/3.1.1/download",
+        "version": "3.1.1"
       }
     },
     "yumgroup": {
@@ -113,6 +124,10 @@
         ">= 0.0.0"
       ],
       [
+        "selinux",
+        "= 3.1.1"
+      ],
+      [
         "yumgroup",
         "= 0.6.0"
       ]
@@ -149,7 +164,14 @@
         [
           "yumgroup",
           ">= 0.0.0"
+        ],
+        [
+          "selinux",
+          ">= 0.0.0"
         ]
+      ],
+      "selinux (3.1.1)": [
+
       ],
       "yumgroup (0.6.0)": [
 
