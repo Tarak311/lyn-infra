@@ -1,0 +1,15 @@
+#!/bin/bash
+
+<% if node['linux_patching'][@stage]['splay'] > 0 -%>
+sleep $[ ( $RANDOM % <%= node['linux_patching'][@stage]['splay'] %> )  + 1 ]s
+<% end -%>
+
+<% if @script_lines.any? -%>
+  <% @script_lines.each do |line| -%>
+  <%= line %>
+  <% end -%>
+<% end -%>
+
+<% if node['linux_patching'][@stage]['reboot'] -%>
+reboot
+<% end -%>
