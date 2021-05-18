@@ -8,15 +8,11 @@ include_recipe 'chef-client::default'
 
 dnf_package 'base-tools' do
   flush_cache [ :after ]
-  package_name   %w(net-tools python3 NetworkManager-wifi podman)
+  package_name   %w(net-tools python3 NetworkManager-wifi )
   action         :upgrade # defaults to :install if not specified
 end
 
 yumgroup 'Development Tools' do
-  action :upgrade
-end
-
-primary_server_update "update-linux" do
   action :upgrade
 end
 
