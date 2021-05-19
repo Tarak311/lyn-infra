@@ -6,16 +6,7 @@
 include_recipe 'os-hardening::default'
 include_recipe 'chef-client::default'
 
-node['linux_patching']['patch'] = {
-  'enable' => true,
-  'hour' => 3,
-  'minute' => 0,
-  'monthly' => nil,
-  'platforms' => 'all',
-  'reboot' => true,
-  'splay' => 0,
-  'weekly' => 'sunday',
-}
+
 
 dnf_package 'base-tools' do
   flush_cache [ :after ]
