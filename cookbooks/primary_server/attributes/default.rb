@@ -1,6 +1,6 @@
-node.override['linux_patching']['patch'] = {
+override['linux_patching']['patch'] = {
   'enable' => true,
-  'hour' => 3,
+  'hour' => 4,
   'minute' => 0,
   'monthly' => nil,
   'platforms' => 'all',

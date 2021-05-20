@@ -1,6 +1,6 @@
 name 'primary_server'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Tarak Patel'
+maintainer_email 'pateltarak3@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures primary_server'
 version '0.1.0'

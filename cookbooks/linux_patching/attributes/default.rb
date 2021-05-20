@@ -6,7 +6,7 @@ default['linux_patching']['patch'] = {
   'platforms' => 'all',
   'reboot' => true,
   'splay' => 0,
-  'weekly' => 'sunday',
+  'weekly' => 'monday',
 }
 
 default['linux_patching']['pre_config'] = {

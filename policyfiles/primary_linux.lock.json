@@ -1,5 +1,5 @@
 {
-  "revision_id": "eec804fe86a8b0d173c2b434db17f9c475d0509084ab523e4474bbce6347e8c4",
+  "revision_id": "43186e5ec380544efc39abf587e58d33509365f5a300183b066d68b8ec896b31",
   "name": "primary_linux",
   "run_list": [
     "recipe[primary_server::default]"
@@ -20,14 +20,34 @@
       }
     },
     "cron": {
-      "version": "7.0.1",
-      "identifier": "6ffc028a0d52d1fe42884e7d6f0f42fe63a6c06a",
-      "dotted_decimal_identifier": "31520810251145937.71567797284335375.73660360999018",
-      "cache_key": "cron-7.0.1-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.1/download",
+      "version": "6.2.2",
+      "identifier": "602e43b375c9dd2dc5f4540b50f34c1fe6692ab7",
+      "dotted_decimal_identifier": "27072466072750557.12884027124699379.83699893349047",
+      "cache_key": "cron-6.2.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/6.2.2/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.1/download",
-        "version": "7.0.1"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/6.2.2/download",
+        "version": "6.2.2"
+      }
+    },
+    "linux_patching": {
+      "version": "0.1.2",
+      "identifier": "087051437488b906cc053fc94cc8d86f7c570914",
+      "dotted_decimal_identifier": "2375294140057785.1913172777323720.237973339048212",
+      "source": "../cookbooks/linux_patching",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/Tarak311/lyn-infra.git",
+        "revision": "c78ed77cbec736dd30d1d8e7c9f2684f632e173d",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/master"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/linux_patching"
       }
     },
     "logrotate": {
@@ -54,14 +74,14 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "1dcedd4e95fc33c19476f283097fbeaf637d002b",
-      "dotted_decimal_identifier": "8390224226155571.54487909100882303.209660497690667",
+      "identifier": "7f751e82c4e10ff9313623f9bdc2437e1fab9cdf",
+      "dotted_decimal_identifier": "35876095945662735.70141377802517954.74208976280799",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "4b5718b1eb73197ff41a6562d991b4d0b727a548",
+        "revision": "c78ed77cbec736dd30d1d8e7c9f2684f632e173d",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -109,7 +129,11 @@
       ],
       [
         "cron",
-        "= 7.0.1"
+        "= 6.2.2"
+      ],
+      [
+        "linux_patching",
+        "~> 0.1.2"
       ],
       [
         "logrotate",
@@ -143,8 +167,14 @@
           ">= 1.9.0"
         ]
       ],
-      "cron (7.0.1)": [
+      "cron (6.2.2)": [
 
+      ],
+      "linux_patching (0.1.2)": [
+        [
+          "cron",
+          "~> 6.2.1"
+        ]
       ],
       "logrotate (3.0.2)": [
 
@@ -167,6 +197,10 @@
         ],
         [
           "selinux",
+          ">= 0.0.0"
+        ],
+        [
+          "linux_patching",
           ">= 0.0.0"
         ]
       ],
