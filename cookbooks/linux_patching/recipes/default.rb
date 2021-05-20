@@ -72,15 +72,16 @@ include_recipe 'cron'
     variables('script_lines': node['linux_patching'][stage]['script'],
               'stage': stage)
   end
-
-  cron_d cron_label.to_s do
-    cron_name "linux_patching_#{stage}"
-    hour      node['linux_patching'][stage]['cron']['hour']
-    minute    node['linux_patching'][stage]['cron']['minute']
-    weekday   node['linux_patching'][stage]['cron']['weekday']
-    day       node['linux_patching'][stage]['cron']['day']
-    month     node['linux_patching'][stage]['cron']['month']
-    command   "/usr/local/sbin/linux_patching_#{stage}"
-    action    action
+  if node['linux_patching'][stage]['enable']
+    cron_d cron_label.to_s do
+      cron_name "linux_patching_#{stage}"
+      hour      node['linux_patching'][stage]['cron']['hour']
+      minute    node['linux_patching'][stage]['cron']['minute']
+      weekday   node['linux_patching'][stage]['cron']['weekday']
+      day       node['linux_patching'][stage]['cron']['day']
+      month     node['linux_patching'][stage]['cron']['month']
+      command   "/usr/local/sbin/linux_patching_#{stage}"
+      action    action
+    end
   end
 end

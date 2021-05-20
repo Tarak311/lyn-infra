@@ -6,6 +6,8 @@
 include_recipe 'os-hardening::default'
 include_recipe 'chef-client::default'
 
+include_recipe 'linux_patching::default'
+
 
 
 dnf_package 'base-tools' do
