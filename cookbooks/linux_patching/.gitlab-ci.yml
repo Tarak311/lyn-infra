@@ -1,0 +1,100 @@
+stages:
+  - pre-build
+  - build
+  - test
+  - deploy
+
+image: 'chef/chefdk'
+
+variables:
+  AWS_DEFAULT_REGION: us-east-1
+  CHEF_LICENSE: accept-no-persist
+  COOKBOOK_NAME: linux_patching
+  ORGANIZATION: dg42
+
+version_bump:
+  stage: pre-build
+  script:
+    - git diff --quiet -G version origin/master metadata.rb
+    - |
+      if [[ $(echo $?) != 0 ]] ; then
+        echo "ERROR... The cookbook version must be changed."
+        exit 1
+      fi
+
+changelog_notes:
+  stage: pre-build
+  script:
+    - cat metadata.rb
+    - VERSION=$(grep '^version ' metadata.rb | cut -d ' ' -f 2 | sed "s/'//g")
+    - |
+      if ! grep -q "$VERSION" metadata.rb ; then
+        echo "ERROR... The CHANGELOG must contain notes for this release."
+        exit 1
+      fi
+
+cookstyle:
+  stage: pre-build
+  before_script:
+    - export CHEF_LICENSE=$CHEF_LICENSE
+  script:
+    - cookstyle
+  
+foodcritic:
+  stage: pre-build
+  before_script:
+    - export CHEF_LICENSE=$CHEF_LICENSE
+  script:
+    - foodcritic .
+
+chefspec:
+  stage: pre-build
+  before_script:
+    - export CHEF_LICENSE=$CHEF_LICENSE
+  script:
+    - chef exec rspec
+
+install_policyfile:
+  stage: build
+  before_script:
+    - export CHEF_LICENSE=$CHEF_LICENSE
+  script:
+    - chef install
+  artifacts:
+    paths:
+    - Policyfile.lock.json
+
+kitchen:
+  stage: test
+  before_script:
+    - export CHEF_LICENSE=$CHEF_LICENSE
+    - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+    - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+  script:
+    - kitchen create
+    - kitchen converge
+    - kitchen verify
+  after_script:
+    - kitchen destroy
+    - unset AWS_ACCESS_KEY_ID
+    - unset AWS_SECRET_ACCESS_KEY
+    - unset AWS_DEFAULT_REGION
+
+deploy:
+  stage: deploy
+  before_script:
+    - mkdir /builds/.chef/
+    - echo "$KEY" > "/builds/.chef/$ORGANIZATION.pem"
+    - |
+      cat <<EOT >> /builds/.chef/knife.rb
+        node_name                "$ORGANIZATION"
+        client_key               "/builds/.chef/$ORGANIZATION.pem"
+        chef_server_url          "https://api.chef.io/organizations/$ORGANIZATION"
+        cookbook_path            [".."]
+      EOT
+  script:
+    - knife supermarket share "$COOKBOOK_NAME" "Other"
+  after_script:
+    - rm -rf /builds/.chef/
+    - rm Policyfile.lock.json

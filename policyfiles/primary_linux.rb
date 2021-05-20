@@ -16,3 +16,6 @@ run_list 'primary_server::default'
 cookbook 'primary_server', path: '../cookbooks/primary_server'
 cookbook 'os-hardening', '= 4.0.0'
 cookbook 'chef-client', '~> 12.3.4', :supermarket
+cookbook 'yumgroup', '~> 0.6.0', :supermarket
+cookbook 'selinux', '~> 3.1.1', :supermarket
+cookbook 'linux_patching', '~> 0.1.2', path: '../cookbooks/ linux_patching/'

@@ -1,0 +1,42 @@
+{
+  "name": "logrotate",
+  "description": "Installs logrotate package and provides a resource for managing logrotate configs",
+  "long_description": "",
+  "maintainer": "Sous Chefs",
+  "maintainer_email": "help@sous-chefs.org",
+  "license": "Apache-2.0",
+  "platforms": {
+    "amazon": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "oracle": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "scientific": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0"
+  },
+  "dependencies": {
+
+  },
+  "providing": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "3.0.2",
+  "source_url": "https://github.com/sous-chefs/logrotate",
+  "issues_url": "https://github.com/sous-chefs/logrotate/issues",
+  "privacy": false,
+  "chef_versions": [
+    [
+      ">= 15.3"
+    ]
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ],
+  "eager_load_libraries": true
+}
