@@ -15,4 +15,4 @@ supports 'debian'
 supports 'redhat'
 supports 'ubuntu'
 
-depends 'cron', '~> 6.2.1'
+depends 'cron'

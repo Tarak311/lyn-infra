@@ -20,3 +20,5 @@ cookbook 'chef-client', '~> 12.3.4', :supermarket
 cookbook 'yumgroup', '~> 0.6.0', :supermarket
 cookbook 'selinux', '~> 3.1.1', :supermarket
 cookbook 'linux_patching', '~> 0.1.2', path: '../cookbooks/linux_patching/'
+
+cookbook 'littleobi-base-linux', path: '../cookbooks/littleobi-base-linux/'

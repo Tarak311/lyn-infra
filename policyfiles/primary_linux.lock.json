@@ -1,7 +1,9 @@
 {
-  "revision_id": "43186e5ec380544efc39abf587e58d33509365f5a300183b066d68b8ec896b31",
+  "revision_id": "636cee4353c88d8f2493065cdd6cd8799da61fdc594bfc3b886998a550a11c46",
   "name": "primary_linux",
   "run_list": [
+    "recipe[os-hardening::default]",
+    "recipe[chef-client::default]",
     "recipe[primary_server::default]"
   ],
   "included_policy_locks": [
@@ -20,34 +22,54 @@
       }
     },
     "cron": {
-      "version": "6.2.2",
-      "identifier": "602e43b375c9dd2dc5f4540b50f34c1fe6692ab7",
-      "dotted_decimal_identifier": "27072466072750557.12884027124699379.83699893349047",
-      "cache_key": "cron-6.2.2-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/6.2.2/download",
+      "version": "7.0.1",
+      "identifier": "6ffc028a0d52d1fe42884e7d6f0f42fe63a6c06a",
+      "dotted_decimal_identifier": "31520810251145937.71567797284335375.73660360999018",
+      "cache_key": "cron-7.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.1/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/6.2.2/download",
-        "version": "6.2.2"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.1/download",
+        "version": "7.0.1"
       }
     },
     "linux_patching": {
       "version": "0.1.2",
-      "identifier": "087051437488b906cc053fc94cc8d86f7c570914",
-      "dotted_decimal_identifier": "2375294140057785.1913172777323720.237973339048212",
+      "identifier": "da428b288af0bf0d4308fdd056fe42c06db9ecd5",
+      "dotted_decimal_identifier": "61434710371004607.3732880594327294.73394242055381",
       "source": "../cookbooks/linux_patching",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "c78ed77cbec736dd30d1d8e7c9f2684f632e173d",
+        "revision": "f8fbf6448a28923f7ebf71fae6bf31bd534c9ac4",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/master"
+
         ]
       },
       "source_options": {
         "path": "../cookbooks/linux_patching"
+      }
+    },
+    "littleobi-base-linux": {
+      "version": "0.1.0",
+      "identifier": "d7768fe41abc2dc6f99cd2ef05f68dcc28e23c46",
+      "dotted_decimal_identifier": "60647480372149293.56006497337804278.155907998760006",
+      "source": "../cookbooks/littleobi-base-linux",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/Tarak311/lyn-infra.git",
+        "revision": "f8fbf6448a28923f7ebf71fae6bf31bd534c9ac4",
+        "working_tree_clean": false,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/littleobi-base-linux"
       }
     },
     "logrotate": {
@@ -74,18 +96,18 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "7f751e82c4e10ff9313623f9bdc2437e1fab9cdf",
-      "dotted_decimal_identifier": "35876095945662735.70141377802517954.74208976280799",
+      "identifier": "a892d494b828ee6200ce4e9da3174185327cd72e",
+      "dotted_decimal_identifier": "47449237813209326.27585433799861015.72040333498158",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "c78ed77cbec736dd30d1d8e7c9f2684f632e173d",
+        "revision": "f8fbf6448a28923f7ebf71fae6bf31bd534c9ac4",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/master"
+
         ]
       },
       "source_options": {
@@ -129,11 +151,15 @@
       ],
       [
         "cron",
-        "= 6.2.2"
+        "= 7.0.1"
       ],
       [
         "linux_patching",
         "~> 0.1.2"
+      ],
+      [
+        "littleobi-base-linux",
+        ">= 0.0.0"
       ],
       [
         "logrotate",
@@ -167,30 +193,16 @@
           ">= 1.9.0"
         ]
       ],
-      "cron (6.2.2)": [
+      "cron (7.0.1)": [
 
       ],
       "linux_patching (0.1.2)": [
         [
           "cron",
-          "~> 6.2.1"
+          ">= 0.0.0"
         ]
       ],
-      "logrotate (3.0.2)": [
-
-      ],
-      "os-hardening (4.0.0)": [
-
-      ],
-      "primary_server (0.1.0)": [
-        [
-          "os-hardening",
-          ">= 0.0.0"
-        ],
-        [
-          "chef-client",
-          ">= 0.0.0"
-        ],
+      "littleobi-base-linux (0.1.0)": [
         [
           "yumgroup",
           ">= 0.0.0"
@@ -201,6 +213,26 @@
         ],
         [
           "linux_patching",
+          ">= 0.0.0"
+        ]
+      ],
+      "logrotate (3.0.2)": [
+
+      ],
+      "os-hardening (4.0.0)": [
+
+      ],
+      "primary_server (0.1.0)": [
+        [
+          "yumgroup",
+          ">= 0.0.0"
+        ],
+        [
+          "selinux",
+          ">= 0.0.0"
+        ],
+        [
+          "littleobi-base-linux",
           ">= 0.0.0"
         ]
       ],
