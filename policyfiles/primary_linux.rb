@@ -10,12 +10,13 @@ name 'primary_linux'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'primary_server::default'
+
+run_list 'os-hardening::default', 'chef-client::default', 'primary_server::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'primary_server', path: '../cookbooks/primary_server'
-cookbook 'os-hardening', '= 4.0.0'
+cookbook 'os-hardening', '= 4.0.0' , :supermarket
 cookbook 'chef-client', '~> 12.3.4', :supermarket
 cookbook 'yumgroup', '~> 0.6.0', :supermarket
 cookbook 'selinux', '~> 3.1.1', :supermarket
-cookbook 'linux_patching', '~> 0.1.2', path: '../cookbooks/ linux_patching/'
+cookbook 'linux_patching', '~> 0.1.2', path: '../cookbooks/linux_patching/'
