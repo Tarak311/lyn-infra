@@ -1,8 +1,8 @@
-name 'primary_server'
-maintainer 'Tarak Patel'
-maintainer_email 'pateltarak3@gmail.com'
+name 'worker_node'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
 license 'All Rights Reserved'
-description 'Installs/Configures primary_server'
+description 'Installs/Configures worker_node'
 version '0.1.0'
 chef_version '>= 15.0'
 
@@ -10,13 +10,13 @@ chef_version '>= 15.0'
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
 #
-# issues_url 'https://github.com/<insert_org_here>/primary_server/issues'
+# issues_url 'https://github.com/<insert_org_here>/worker_node/issues'
 
 # The `source_url` points to the development repository for this cookbook.  A
 # `View Source` link will be displayed on this cookbook's page when uploaded to
 # a Supermarket.
 #
-# source_url 'https://github.com/<insert_org_here>/primary_server'
+# source_url 'https://github.com/<insert_org_here>/worker_node'
 
 depends 'yumgroup'
 depends 'selinux'
