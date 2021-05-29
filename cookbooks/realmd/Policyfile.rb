@@ -4,17 +4,13 @@
 # https://docs.chef.io/policyfile/
 
 # A name that describes what the system you're building with Chef does.
-name 'littleobi-base-linux'
+name 'realmd'
 
 # Where to find external cookbooks:
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'littleobi-base-linux::default'
+run_list 'realmd::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'littleobi-base-linux', path: '.'
-cookbook 'yumgroup', '~> 0.6.0', :supermarket
-cookbook 'selinux', '~> 3.1.1', :supermarket
-cookbook 'linux_patching', '~> 0.1.2', path: '../linux_patching/'
-cookbook 'resolver', '~> 3.0.4', :supermarket
+cookbook 'realmd', path: '.'
