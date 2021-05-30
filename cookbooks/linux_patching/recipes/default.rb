@@ -20,7 +20,6 @@ return if platform?('windows')
 
 node.override['cron']['package_name'] = 'cronie' if platform?('arch')
 node.override['cron']['service_name'] = 'cronie' if platform?('arch')
-include_recipe 'cron'
 
 %w(pre_config patch post_config).each do |stage|
   if node['linux_patching'][stage]['enable']

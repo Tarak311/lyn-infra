@@ -7,9 +7,7 @@
 include_recipe 'littleobi-base-linux::default'
 
 
-yumgroup 'Development Tools' do
-  action :upgrade
-end
+
 
 selinux_state 'SELinux Permissive' do
   action :permissive
