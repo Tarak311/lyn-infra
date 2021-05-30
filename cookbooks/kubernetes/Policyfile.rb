@@ -14,3 +14,7 @@ run_list 'kubernetes::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'kubernetes', path: '.'
+cookbook 'yumgroup', '~> 0.6.0', :supermarket
+cookbook 'selinux', '~> 3.1.1', :supermarket
+cookbook 'resolver', '~> 3.0.4', :supermarket
+cookbook 'firewalld', '~> 1.2.1', :supermarket
