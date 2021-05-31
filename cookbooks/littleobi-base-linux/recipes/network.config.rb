@@ -4,3 +4,11 @@ template '/etc/hosts' do
   group 'root'
   mode '0755'
 end 
+
+resolver_config '/etc/resolv.conf' do
+    nameservers ['1.1.1.1', '1.0.0.1']
+    domain 'lynvalley.littleobi.com'
+    options(
+      'timeout' => 2
+    )
+end
