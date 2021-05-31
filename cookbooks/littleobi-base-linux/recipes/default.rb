@@ -11,5 +11,6 @@ include_recipe 'littleobi-base-linux::selinux.security'
 include_recipe 'littleobi-base-linux::firewalld'
 include_recipe 'littleobi-base-linux::virtualization'
 include_recipe 'littleobi-base-linux::virtualbox.virtualization'
+include_recipe 'littleobi-base-linux::default.kube'
 include_recipe 'littleobi-base-linux::network.config'
-include_recipe 'kubernetes::default'
+

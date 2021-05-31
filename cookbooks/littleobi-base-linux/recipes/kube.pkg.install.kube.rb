@@ -1,9 +1,9 @@
 yum_repository 'kubeadm' do
-    baseurl         'https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch'
-    description     'Repo for Docker-CR'
+    baseurl         'https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64'
+    description     'Repo for Kubelet'
     enabled         true
     gpgcheck        true
-    gpgkey          'https://packages.cloud.google.com/yum/doc/yum-key.gpg'
+    gpgkey         %w(https://packages.cloud.google.com/yum/doc/yum-key.gpg  https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg)
 end
 
 dnf_package 'kubeadm' do
@@ -15,5 +15,5 @@ end
 service 'kubelet' do
     pattern 'kubelet'
     action [:enable, :start]
-  end
+end
     
