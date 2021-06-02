@@ -15,7 +15,7 @@ run_list 'os-hardening::default', 'chef-client::default', 'primary_server::defau
 
 # Specify a custom source for a single cookbook:
 cookbook 'primary_server', path: '../cookbooks/primary_server'
-cookbook 'os-hardening', '= 4.0.0' , :supermarket
+cookbook 'os-hardening', '= 4.0.0', :supermarket
 cookbook 'chef-client', '~> 12.3.4', :supermarket
 cookbook 'yumgroup', '~> 0.6.0', :supermarket
 cookbook 'selinux', '~> 3.1.1', :supermarket
