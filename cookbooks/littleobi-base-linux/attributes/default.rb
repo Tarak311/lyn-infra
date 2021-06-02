@@ -8,6 +8,7 @@ override['linux_patching']['patch'] = {
   'splay' => 0,
   'weekly' => 'sunday',
 }
+override['yum']['powertools']['enabled'] = true
 
 override['linux_patching']['pre_config'] = {
   'enable' => false,

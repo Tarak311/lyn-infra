@@ -13,4 +13,4 @@ include_recipe 'littleobi-base-linux::virtualization'
 include_recipe 'littleobi-base-linux::virtualbox.virtualization'
 include_recipe 'littleobi-base-linux::default.kube'
 include_recipe 'littleobi-base-linux::network.config'
-
+include_recipe 'yum-centos:default'
