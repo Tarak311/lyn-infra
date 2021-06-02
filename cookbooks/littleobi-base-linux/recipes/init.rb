@@ -6,3 +6,11 @@ bash 'Clean rpm/yum/dnf chache' do
     dnf clean all
     EOH
 end
+
+
+dnf_package 'plugin tools' do
+  flush_cache [ :after ]
+  package_name   %w(dnf-plugins-core )
+  action         :install # defaults to :install if not specified
+end
+

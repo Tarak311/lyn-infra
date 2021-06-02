@@ -10,6 +10,8 @@ override['linux_patching']['patch'] = {
 }
 override['yum']['powertools']['enabled'] = true
 
+node.override['yum']['powertools']['managed'] = true
+node.override['yum']['powertools']['enabled'] = true
 override['linux_patching']['pre_config'] = {
   'enable' => false,
   'weekday' => 0,
