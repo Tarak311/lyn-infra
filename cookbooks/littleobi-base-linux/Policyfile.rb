@@ -19,3 +19,4 @@ cookbook 'selinux', '~> 3.1.1', :supermarket
 cookbook 'linux_patching', '~> 0.1.2', path: '../linux_patching/'
 cookbook 'resolver', '~> 3.0.4', :supermarket
 cookbook 'firewalld', '~> 1.2.1', :supermarket
+cookbook 'yum-centos', '~> 5.1.1', :supermarket

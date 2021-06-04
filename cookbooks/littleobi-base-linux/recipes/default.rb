@@ -3,7 +3,12 @@
 # Recipe:: default
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
+
+include_recipe 'yum-centos::default'
 include_recipe 'linux_patching::default'
+
+
+include_recipe 'yum::default'
 include_recipe 'littleobi-base-linux::init'
 include_recipe 'littleobi-base-linux::base'
 include_recipe 'littleobi-base-linux::targetd'
@@ -13,4 +18,5 @@ include_recipe 'littleobi-base-linux::virtualization'
 include_recipe 'littleobi-base-linux::virtualbox.virtualization'
 include_recipe 'littleobi-base-linux::default.kube'
 include_recipe 'littleobi-base-linux::network.config'
-include_recipe 'yum-centos:default'
+include_recipe 'littleobi-base-linux::pkg.install.gns3'
+

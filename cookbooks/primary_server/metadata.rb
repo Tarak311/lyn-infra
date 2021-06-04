@@ -21,3 +21,5 @@ chef_version '>= 15.0'
 depends 'yumgroup'
 depends 'selinux'
 depends 'littleobi-base-linux'
+
+depends 'yum-centos'

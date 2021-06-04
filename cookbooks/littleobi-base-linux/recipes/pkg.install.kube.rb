@@ -13,7 +13,6 @@ dnf_package 'kubeadm' do
 end
 
 service 'kubelet' do
-    pattern 'kubelet'
-    action [:enable, :start]
+  pattern 'kubelet' 
+  action [:enable, :start]
 end
-    
