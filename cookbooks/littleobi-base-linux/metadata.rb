@@ -23,6 +23,7 @@ depends 'selinux'
 
 depends 'linux_patching'
 depends 'resolver'
-depends 'kubernetes'
 depends 'firewalld'
 depends 'yum-centos'
+
+depends 'yum'
