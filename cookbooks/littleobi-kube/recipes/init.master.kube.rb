@@ -1,7 +1,7 @@
 
 bash 'Init as master' do
     user 'root'
-    cwd '/home/vagrant/dynamips/'
+    cwd '/tmp/'
     code <<-EOH
     sudo swapoff -a
     sudo kubeadm init >> ./kubeadm.log
@@ -11,7 +11,7 @@ end
 
 bash 'allowing users' do
     user 'root'
-    cwd '/home/vagrant/'
+    cwd '/tmp/'
     code <<-EOH
     mkdir -p $HOME/.kube
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config

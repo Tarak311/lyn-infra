@@ -4,15 +4,16 @@
 # https://docs.chef.io/policyfile/
 
 # A name that describes what the system you're building with Chef does.
-name 'primary_linux'
+name 'worker_linux'
 
 # Where to find external cookbooks:
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'os-hardening::default', 'chef-client::default', 'primary_server::default', 'littleobi-kube::init.master.kube'
+run_list 'os-hardening::default', 'chef-client::default', 'worker_node::default'
 
 # Specify a custom source for a single cookbook:
+cookbook 'worker_node', path: '../cookbooks/worker_node/'
 cookbook 'primary_server', path: '../cookbooks/primary_server/'
 cookbook 'littleobi-base-linux', path: '../cookbooks/littleobi-base-linux/'
 cookbook 'littleobi-kube','= 0.0.1', path: '../cookbooks/littleobi-kube/'
