@@ -18,6 +18,5 @@ chef_version '>= 15.0'
 #
 # source_url 'https://github.com/<insert_org_here>/primary_server'
 
-depends 'yumgroup'
-depends 'selinux'
+
 depends 'littleobi-base-linux'

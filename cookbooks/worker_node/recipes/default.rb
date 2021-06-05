@@ -6,7 +6,6 @@
 
 include_recipe 'littleobi-base-linux::default'
 
-
 yumgroup 'Development Tools' do
   action :upgrade
 end

@@ -1,0 +1,36 @@
+{
+  "name": "yum-centos",
+  "description": "Installs and configures the Centos Yum repositories",
+  "long_description": "",
+  "maintainer": "Sous Chefs",
+  "maintainer_email": "help@sous-chefs.org",
+  "license": "Apache-2.0",
+  "platforms": {
+    "centos": ">= 0.0.0"
+  },
+  "dependencies": {
+
+  },
+  "providing": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "5.1.1",
+  "source_url": "https://github.com/sous-chefs/yum-centos",
+  "issues_url": "https://github.com/sous-chefs/yum-centos/issues",
+  "privacy": false,
+  "chef_versions": [
+    [
+      ">= 12.15"
+    ]
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ],
+  "eager_load_libraries": true
+}

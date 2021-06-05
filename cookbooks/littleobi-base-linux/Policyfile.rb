@@ -14,6 +14,3 @@ run_list 'littleobi-base-linux::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'littleobi-base-linux', path: '.'
-cookbook 'yumgroup', '~> 0.6.0', :supermarket
-cookbook 'selinux', '~> 3.1.1', :supermarket
-cookbook 'linux_patching', '~> 0.1.2', path: '../linux_patching/'

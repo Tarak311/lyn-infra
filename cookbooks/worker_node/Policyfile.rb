@@ -10,11 +10,11 @@ name 'worker_node'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'os-hardening::default', 'chef-client::default','worker_node::default'
+run_list 'os-hardening::default', 'chef-client::default', 'worker_node::default'
 
 # Specify a custom source for a single cookbook:
 cookbook 'worker_node', path: '.'
-cookbook 'os-hardening', '= 4.0.0' , :supermarket
+cookbook 'os-hardening', '= 4.0.0', :supermarket
 cookbook 'chef-client', '~> 12.3.4', :supermarket
 cookbook 'littleobi-base-linux', path: '../littleobi-base-linux/'
 cookbook 'yumgroup', '~> 0.6.0', :supermarket
