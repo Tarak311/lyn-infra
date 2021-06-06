@@ -4,7 +4,7 @@ bash 'Init as master' do
     cwd '/tmp/'
     code <<-EOH
     sudo swapoff -a
-    sudo kubeadm init >> ./kubeadm.log
+    echo 'sudo kubeadm init >> ./kubeadm.log'>./file
     EOH
 end
 
@@ -17,6 +17,16 @@ bash 'allowing users' do
     sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
     sudo chown $(id -u):$(id -g) $HOME/.kube/config
     export kubever=$(kubectl version | base64 | tr -d '\n')
-    kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+    echo 'kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"'
     EOH
 end
+
+
+bash 'generate_token' do
+    user 'root'
+    cwd  '/tmp'
+    code <<-EOH
+    KUBETOKEN=$(kubeadm token create --print-join-command)
+    EOH
+end
+

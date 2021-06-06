@@ -11,6 +11,7 @@ default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
 run_list 'os-hardening::default', 'chef-client::default', 'primary_server::default', 'littleobi-kube::init.master.kube'
+#run_list  'primary_server::default', 'littleobi-kube::init.master.kube'
 
 # Specify a custom source for a single cookbook:
 cookbook 'primary_server', path: '.'

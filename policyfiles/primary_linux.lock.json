@@ -1,5 +1,5 @@
 {
-  "revision_id": "a60b616d923219a21cee45dae3706430ec3b0d710b25b486e1e1a720e72bf4cb",
+  "revision_id": "25cc27d9d17cafaf7b138808823bc2bae99c36a2e82921484885c255ac42feae",
   "name": "primary_linux",
   "run_list": [
     "recipe[os-hardening::default]",
@@ -53,7 +53,7 @@
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "229b9f68786d692fb87781819229afa235c0153b",
+        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -66,14 +66,14 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "466c3c9a744b44f40af6390045d4801e63a9cd6a",
-      "dotted_decimal_identifier": "19822255914896196.68691946951951828.140868009446762",
+      "identifier": "2a0edd7b8c443e15bd6ce97031c40675ecd13d1c",
+      "dotted_decimal_identifier": "11838293445198910.6119249981485508.7103554075932",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "229b9f68786d692fb87781819229afa235c0153b",
+        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -108,14 +108,14 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "169991aa0f047e3c81ca698576bafe750a9b09b0",
-      "dotted_decimal_identifier": "6361300390052990.17031204956370618.279778642561456",
+      "identifier": "ac2ceaf895e3279a9319cc4aca6ea9139d368025",
+      "dotted_decimal_identifier": "48463083698774823.43508885424360046.185901707067429",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "229b9f68786d692fb87781819229afa235c0153b",
+        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [

@@ -13,7 +13,7 @@ end
 
 dnf_package 'automation-install-tools' do
   flush_cache [ :after ]
-  package_name   %w(python3 make patch gcc)
+  package_name   %w(python3 make patch gcc ruby)
   action         :install # defaults to :install if not specified
 end
 
