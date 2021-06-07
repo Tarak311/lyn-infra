@@ -5,6 +5,10 @@ sysctl 'net.bridge.bridge-nf-call-ip6tables' do
   value '1'
 end
 
+sysctl 'net.ipv4.ip_forward' do
+  value '1'
+end
+
 sysctl 'net.bridge.bridge-nf-call-iptables' do
   value '1'
 end

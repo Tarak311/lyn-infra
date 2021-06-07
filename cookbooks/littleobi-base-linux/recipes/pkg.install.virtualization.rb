@@ -8,23 +8,25 @@ service 'libvirtd' do
   pattern 'libvirtd'
   action [:enable, :start]
 end
+case node['platform']
+when 'redhat'
+  yumgroup 'Virtualization Host' do
+    action :install
+  end
 
-yumgroup 'Virtualization Host' do
-  action :install
-end
+  yumgroup 'Virtualization Client' do
+    action :install
+  end
 
-yumgroup 'Virtualization Client' do
-  action :install
-end
+  yumgroup 'Virtualization Platform' do
+    action :install
+  end
 
-yumgroup 'Virtualization Platform' do
-  action :install
-end
+  yumgroup 'Virtualization Tools' do
+    action :install
+  end
 
-yumgroup 'Virtualization Tools' do
-  action :install
-end
-
-yumgroup 'Virtualization Hypervisor' do
-  action :install
+  yumgroup 'Virtualization Hypervisor' do
+    action :install
+  end
 end

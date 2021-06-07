@@ -14,6 +14,8 @@ driver:
 
 provisioner:
   name: chef_zero
+  data_bags_path: "../../data_bags/"
+  
 
   ## product_name and product_version specifies a specific Chef product and version to install.
   ## see the Chef documentation for more details: https://docs.chef.io/workstation/config_yml_kitchen/
@@ -24,7 +26,7 @@ verifier:
   name: inspec
 
 platforms:
-  - name: centos-8
+  - name: fedora-latest
 
 suites:
   - name: default

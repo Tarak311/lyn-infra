@@ -4,10 +4,10 @@ dnf_package 'cookpit' do
   action         :install # defaults to :install if not specified
 end
 
-service 'cockpit' do
-  pattern 'cockpit'
-  action [:enable, :start]
-end
+#service 'cockpit' do
+#  pattern 'cockpit'
+#  action [:enable, :start]
+#end
 
 firewalld_service 'cockpit' do
   action :add

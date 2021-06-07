@@ -1,0 +1,348 @@
+{
+  "revision_id": "25cc27d9d17cafaf7b138808823bc2bae99c36a2e82921484885c255ac42feae",
+  "name": "primary_linux",
+  "run_list": [
+    "recipe[os-hardening::default]",
+    "recipe[chef-client::default]",
+    "recipe[primary_server::default]",
+    "recipe[littleobi-kube::init.master.kube]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "chef-client": {
+      "version": "12.3.4",
+      "identifier": "9e4148496618fe2253acba978d67921a5dc0b48a",
+      "dotted_decimal_identifier": "44544825045162238.9662150538136935.160641939715210",
+      "cache_key": "chef-client-12.3.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/chef-client/versions/12.3.4/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/chef-client/versions/12.3.4/download",
+        "version": "12.3.4"
+      }
+    },
+    "cron": {
+      "version": "7.0.2",
+      "identifier": "86c848645eb19bca1849905f7072642b88cade4a",
+      "dotted_decimal_identifier": "37937860126355867.56884649529405554.110138141367882",
+      "cache_key": "cron-7.0.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.2/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cron/versions/7.0.2/download",
+        "version": "7.0.2"
+      }
+    },
+    "firewalld": {
+      "version": "1.2.1",
+      "identifier": "61a8a209964f0d3fbeea0e23d78cab64d76ce199",
+      "dotted_decimal_identifier": "27488486639947533.17942836001625996.188449599316377",
+      "cache_key": "firewalld-1.2.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/firewalld/versions/1.2.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/firewalld/versions/1.2.1/download",
+        "version": "1.2.1"
+      }
+    },
+    "littleobi-base-linux": {
+      "version": "0.1.0",
+      "identifier": "631eec3f743491e9d53cb971775bb647d9ed63dc",
+      "dotted_decimal_identifier": "27900022720050321.65818126359557979.200419715146716",
+      "source": "../cookbooks/littleobi-base-linux",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/Tarak311/lyn-infra.git",
+        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/development"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/littleobi-base-linux"
+      }
+    },
+    "littleobi-kube": {
+      "version": "0.0.1",
+      "identifier": "2a0edd7b8c443e15bd6ce97031c40675ecd13d1c",
+      "dotted_decimal_identifier": "11838293445198910.6119249981485508.7103554075932",
+      "source": "../cookbooks/littleobi-kube",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/Tarak311/lyn-infra.git",
+        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/development"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/littleobi-kube"
+      }
+    },
+    "logrotate": {
+      "version": "3.0.3",
+      "identifier": "a0322adec3365471d1a6a1d34a7b765fc12b616d",
+      "dotted_decimal_identifier": "45091155981055572.32037185978059387.130153634816365",
+      "cache_key": "logrotate-3.0.3-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/logrotate/versions/3.0.3/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/logrotate/versions/3.0.3/download",
+        "version": "3.0.3"
+      }
+    },
+    "os-hardening": {
+      "version": "4.0.0",
+      "identifier": "e20b98be94004b4013698889ce3ce232f88fbb27",
+      "dotted_decimal_identifier": "63626095396913227.18035742492708412.248708546411303",
+      "cache_key": "os-hardening-4.0.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/os-hardening/versions/4.0.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/os-hardening/versions/4.0.0/download",
+        "version": "4.0.0"
+      }
+    },
+    "primary_server": {
+      "version": "0.1.0",
+      "identifier": "ac2ceaf895e3279a9319cc4aca6ea9139d368025",
+      "dotted_decimal_identifier": "48463083698774823.43508885424360046.185901707067429",
+      "source": "../cookbooks/primary_server",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/Tarak311/lyn-infra.git",
+        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/development"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/primary_server"
+      }
+    },
+    "resolver": {
+      "version": "4.0.1",
+      "identifier": "3d4ea5316f91319da83d9f7d6b29b634f231a3b5",
+      "dotted_decimal_identifier": "17256444985315633.44376553965841193.200338517894069",
+      "cache_key": "resolver-4.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/resolver/versions/4.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/resolver/versions/4.0.1/download",
+        "version": "4.0.1"
+      }
+    },
+    "selinux": {
+      "version": "3.1.1",
+      "identifier": "bf76c6d8a36159bf83ae9a14d6cf99ffd180acb7",
+      "dotted_decimal_identifier": "53892316961923417.53906506484340431.169324010581175",
+      "cache_key": "selinux-3.1.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/selinux/versions/3.1.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/selinux/versions/3.1.1/download",
+        "version": "3.1.1"
+      }
+    },
+    "yum": {
+      "version": "6.1.1",
+      "identifier": "e02716c04dfcdfa0261813336ac401340547dbec",
+      "dotted_decimal_identifier": "63093373452287199.45077881116912324.1322938522604",
+      "cache_key": "yum-6.1.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum/versions/6.1.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum/versions/6.1.1/download",
+        "version": "6.1.1"
+      }
+    },
+    "yum-centos": {
+      "version": "5.1.1",
+      "identifier": "1eeb30ad884afa87989f9e09f145c4e777684a55",
+      "dotted_decimal_identifier": "8702843603667706.38166933174612293.216498419812949",
+      "cache_key": "yum-centos-5.1.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-centos/versions/5.1.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-centos/versions/5.1.1/download",
+        "version": "5.1.1"
+      }
+    },
+    "yumgroup": {
+      "version": "0.6.0",
+      "identifier": "76e63e848676b7eb6bf33e87ee372fd851c07f7f",
+      "dotted_decimal_identifier": "33467203437622967.66265311997324855.52606131011455",
+      "cache_key": "yumgroup-0.6.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yumgroup/versions/0.6.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yumgroup/versions/0.6.0/download",
+        "version": "0.6.0"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "chef-client",
+        "= 12.3.4"
+      ],
+      [
+        "cron",
+        "= 7.0.2"
+      ],
+      [
+        "firewalld",
+        "= 1.2.1"
+      ],
+      [
+        "littleobi-base-linux",
+        ">= 0.0.0"
+      ],
+      [
+        "littleobi-kube",
+        "= 0.0.1"
+      ],
+      [
+        "logrotate",
+        "= 3.0.3"
+      ],
+      [
+        "os-hardening",
+        "= 4.0.0"
+      ],
+      [
+        "primary_server",
+        ">= 0.0.0"
+      ],
+      [
+        "resolver",
+        "= 4.0.1"
+      ],
+      [
+        "selinux",
+        "= 3.1.1"
+      ],
+      [
+        "yum",
+        "= 6.1.1"
+      ],
+      [
+        "yum-centos",
+        "= 5.1.1"
+      ],
+      [
+        "yumgroup",
+        "= 0.6.0"
+      ]
+    ],
+    "dependencies": {
+      "chef-client (12.3.4)": [
+        [
+          "cron",
+          ">= 4.2.0"
+        ],
+        [
+          "logrotate",
+          ">= 1.9.0"
+        ]
+      ],
+      "cron (7.0.2)": [
+
+      ],
+      "firewalld (1.2.1)": [
+
+      ],
+      "littleobi-base-linux (0.1.0)": [
+        [
+          "yumgroup",
+          ">= 0.0.0"
+        ],
+        [
+          "selinux",
+          ">= 0.0.0"
+        ],
+        [
+          "resolver",
+          ">= 0.0.0"
+        ],
+        [
+          "firewalld",
+          ">= 0.0.0"
+        ],
+        [
+          "yum-centos",
+          ">= 0.0.0"
+        ],
+        [
+          "littleobi-kube",
+          ">= 0.0.0"
+        ],
+        [
+          "yum",
+          ">= 0.0.0"
+        ]
+      ],
+      "littleobi-kube (0.0.1)": [
+        [
+          "yumgroup",
+          ">= 0.0.0"
+        ],
+        [
+          "selinux",
+          ">= 0.0.0"
+        ],
+        [
+          "resolver",
+          ">= 0.0.0"
+        ],
+        [
+          "firewalld",
+          ">= 0.0.0"
+        ],
+        [
+          "yum-centos",
+          ">= 0.0.0"
+        ],
+        [
+          "yum",
+          ">= 0.0.0"
+        ]
+      ],
+      "logrotate (3.0.3)": [
+
+      ],
+      "os-hardening (4.0.0)": [
+
+      ],
+      "primary_server (0.1.0)": [
+        [
+          "littleobi-base-linux",
+          ">= 0.0.0"
+        ]
+      ],
+      "resolver (4.0.1)": [
+
+      ],
+      "selinux (3.1.1)": [
+
+      ],
+      "yum (6.1.1)": [
+
+      ],
+      "yum-centos (5.1.1)": [
+
+      ],
+      "yumgroup (0.6.0)": [
+
+      ]
+    }
+  }
+}
