@@ -26,7 +26,7 @@ bash 'generate_token' do
     user 'root'
     cwd  '/tmp'
     code <<-EOH
-    KUBETOKEN=$(kubeadm token create --print-join-command)
+    KUBETOKEN='(kubeadm token create --print-join-command)'
     EOH
 end
 
