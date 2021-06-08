@@ -1,5 +1,5 @@
 case node['platform']
-when 'redhat'
+when 'centos'
   dnf_package 'plugin tools' do
     flush_cache [ :after ]
     package_name   %w(dnf-plugins-core )

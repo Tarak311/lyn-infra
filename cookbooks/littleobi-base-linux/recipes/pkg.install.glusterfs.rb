@@ -1,6 +1,6 @@
 #centos-release-gluster
 case node['platform']
-when 'redhat'
+when 'centos'
 
     dnf_package 'centos-release-gluster' do
         flush_cache [ :after ]

@@ -1,5 +1,5 @@
 case node['platform']
-when 'redhat'
+when 'centos'
 
   yum_repository 'virtualbox' do
     baseurl 'http://download.virtualbox.org/virtualbox/rpm/el/$releasever/$basearch'
