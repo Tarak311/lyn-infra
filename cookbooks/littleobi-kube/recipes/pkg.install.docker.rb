@@ -1,6 +1,6 @@
 # this will install docker
 case node['platform']
-when 'redhat'
+when 'centos'
   yum_repository 'docker-ce' do
     baseurl         'https://download.docker.com/linux/centos/$releasever/$basearch/stable'
     description     'Repo for Docker-CR'

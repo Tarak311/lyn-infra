@@ -9,7 +9,7 @@ service 'libvirtd' do
   action [:enable, :start]
 end
 case node['platform']
-when 'redhat'
+when 'centos'
   yumgroup 'Virtualization Host' do
     action :install
   end
