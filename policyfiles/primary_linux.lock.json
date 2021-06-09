@@ -1,5 +1,5 @@
 {
-  "revision_id": "8fe1e20c2952debbbdcec0c927cacac2addb0930f767705839a0a3e37dd2aace",
+  "revision_id": "962773111e8dffd8be958efcdbb82ad0d2286664d9c4d37447018c79f192f045",
   "name": "primary_linux",
   "run_list": [
     "recipe[os-hardening::default]",
@@ -58,18 +58,18 @@
     },
     "littleobi-base-linux": {
       "version": "0.1.0",
-      "identifier": "2cb8cfd48070d91447381ae8e2567fa98f274508",
-      "dotted_decimal_identifier": "12588101738197209.5707805829423702.140366227916040",
+      "identifier": "06a08ae9882268f00f932700023fac4f7cc6cffd",
+      "dotted_decimal_identifier": "1865368344207976.67571119099478591.189457395798013",
       "source": "../cookbooks/littleobi-base-linux",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "a724b6bb1c268b2d5bdf3bf9212830906b4ca0d6",
+        "revision": "f35fca015287054861a356257a376885e80677f1",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/master"
+          "origin/development"
         ]
       },
       "source_options": {
@@ -78,18 +78,18 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "d44807588f53acfc38f7c517defdb49dcf223be0",
-      "dotted_decimal_identifier": "59751891450418092.70994330945838845.198589877992416",
+      "identifier": "b252965e3cb552907020f513365229f15659aef7",
+      "dotted_decimal_identifier": "50193351634105682.40655683499275858.46116512575223",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "a724b6bb1c268b2d5bdf3bf9212830906b4ca0d6",
+        "revision": "f35fca015287054861a356257a376885e80677f1",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/master"
+          "origin/development"
         ]
       },
       "source_options": {
@@ -127,11 +127,11 @@
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "a724b6bb1c268b2d5bdf3bf9212830906b4ca0d6",
+        "revision": "f35fca015287054861a356257a376885e80677f1",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/master"
+          "origin/development"
         ]
       },
       "source_options": {
