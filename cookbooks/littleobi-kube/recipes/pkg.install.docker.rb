@@ -30,7 +30,7 @@ when 'fedora'
     gpgkey          'https://download.docker.com/linux/fedora/gpg'
   end
 
-  include_recipe 'littleobi-base-linux::reinit.base'C
+  include_recipe 'littleobi-base-linux::reinit.base'
 
   dnf_package 'docker-ce' do
     flush_cache [ :after ]
