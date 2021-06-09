@@ -1,11 +1,12 @@
 {
-  "revision_id": "25cc27d9d17cafaf7b138808823bc2bae99c36a2e82921484885c255ac42feae",
+  "revision_id": "8fe1e20c2952debbbdcec0c927cacac2addb0930f767705839a0a3e37dd2aace",
   "name": "primary_linux",
   "run_list": [
     "recipe[os-hardening::default]",
     "recipe[chef-client::default]",
     "recipe[primary_server::default]",
-    "recipe[littleobi-kube::init.master.kube]"
+    "recipe[littleobi-kube::init.master.kube]",
+    "recipe[littleobi-base-linux::onprem_linux]"
   ],
   "included_policy_locks": [
 
@@ -44,20 +45,31 @@
         "version": "1.2.1"
       }
     },
+    "line": {
+      "version": "4.0.1",
+      "identifier": "e84f1b2fc819d1158606add78054071c76a66e9d",
+      "dotted_decimal_identifier": "65389172781226449.6058337755430996.7818831097501",
+      "cache_key": "line-4.0.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.0.1/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.0.1/download",
+        "version": "4.0.1"
+      }
+    },
     "littleobi-base-linux": {
       "version": "0.1.0",
-      "identifier": "631eec3f743491e9d53cb971775bb647d9ed63dc",
-      "dotted_decimal_identifier": "27900022720050321.65818126359557979.200419715146716",
+      "identifier": "2cb8cfd48070d91447381ae8e2567fa98f274508",
+      "dotted_decimal_identifier": "12588101738197209.5707805829423702.140366227916040",
       "source": "../cookbooks/littleobi-base-linux",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
+        "revision": "a724b6bb1c268b2d5bdf3bf9212830906b4ca0d6",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/development"
+          "origin/master"
         ]
       },
       "source_options": {
@@ -66,18 +78,18 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "2a0edd7b8c443e15bd6ce97031c40675ecd13d1c",
-      "dotted_decimal_identifier": "11838293445198910.6119249981485508.7103554075932",
+      "identifier": "d44807588f53acfc38f7c517defdb49dcf223be0",
+      "dotted_decimal_identifier": "59751891450418092.70994330945838845.198589877992416",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
+        "revision": "a724b6bb1c268b2d5bdf3bf9212830906b4ca0d6",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/development"
+          "origin/master"
         ]
       },
       "source_options": {
@@ -108,18 +120,18 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "ac2ceaf895e3279a9319cc4aca6ea9139d368025",
-      "dotted_decimal_identifier": "48463083698774823.43508885424360046.185901707067429",
+      "identifier": "6c6fbb139f9f90fc4c07e4f67e53c2c0b9948ab7",
+      "dotted_decimal_identifier": "30522146763546512.71015290920926803.214133003029175",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "c2d88aacf9c7b6083210db142f48fbc04abe9330",
+        "revision": "a724b6bb1c268b2d5bdf3bf9212830906b4ca0d6",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/development"
+          "origin/master"
         ]
       },
       "source_options": {
@@ -203,6 +215,10 @@
         "= 1.2.1"
       ],
       [
+        "line",
+        "= 4.0.1"
+      ],
+      [
         "littleobi-base-linux",
         ">= 0.0.0"
       ],
@@ -260,6 +276,9 @@
       "firewalld (1.2.1)": [
 
       ],
+      "line (4.0.1)": [
+
+      ],
       "littleobi-base-linux (0.1.0)": [
         [
           "yumgroup",
@@ -313,6 +332,10 @@
         ],
         [
           "yum",
+          ">= 0.0.0"
+        ],
+        [
+          "line",
           ">= 0.0.0"
         ]
       ],
