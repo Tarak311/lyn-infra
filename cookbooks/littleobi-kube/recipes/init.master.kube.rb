@@ -23,14 +23,39 @@ when 'centos'
         code <<-EOH
         sudo swapoff -a
         sudo kubeadm init > ./kubeadm.log
-        mkdir -p $HOME/.kube
-        sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-        sudo chown $(id -u):$(id -g) $HOME/.kube/config
-        export kubever=$(kubectl version | base64 | tr -d '\n')
-        kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
         EOH
         not_if { ::File.exist?('/tmp/kubeadm.log') }
     end
+    
+    directory '/root/.kube/' do
+        owner 'root'
+        group 'root'
+        mode '0755'
+        subscribes  :create , 'bash[Init as master]', :immediately
+    end
+
+    
+    remote_file "Copy kube config file" do 
+        path "/root/.kube/config" 
+        source "file:///etc/kubernetes/admin.conf"
+        owner 'root'
+        group 'root'
+        mode 0755
+        subscribes  :create , 'directory [/root/.kube/]', :immediately
+    end
+
+
+    bash 'pod net init' do
+        user 'root'
+        cwd '/tmp/'
+        code <<-EOH
+        export kubever=$(kubectl version | base64 | tr -d '\n')
+        kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever" > /tmp/kubeinit.log
+        EOH
+        not_if { ::File.exist?('/tmp/kubeinit.log') }
+    end
+
+    
 
 when 'fedora'
     bash 'disable swap' do
@@ -66,6 +91,7 @@ when 'fedora'
         mode '0755'
         subscribes  :create , 'bash[Init as master]', :immediately
     end
+
     
     remote_file "Copy kube config file" do 
         path "/root/.kube/config" 
