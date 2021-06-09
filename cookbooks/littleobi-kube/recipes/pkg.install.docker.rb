@@ -29,7 +29,7 @@ when 'fedora'
     gpgcheck        true
     gpgkey          'https://download.docker.com/linux/fedora/gpg'
   end
-
+  
   include_recipe 'littleobi-base-linux::reinit.base'
 
   dnf_package 'docker-ce' do
