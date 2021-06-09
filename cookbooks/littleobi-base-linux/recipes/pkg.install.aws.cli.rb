@@ -4,11 +4,3 @@ dnf_package 'pip3' do
     action         :install # defaults to :install if not specified
 end
 
-
-pip3 'awscli' do
-    action :upgrade
-end
-
-pip3 'boto3' do
-    action :upgrade
-end
