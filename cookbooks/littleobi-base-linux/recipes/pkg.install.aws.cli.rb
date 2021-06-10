@@ -4,3 +4,9 @@ dnf_package 'pip3' do
     action         :install # defaults to :install if not specified
 end
 
+bash 'install awscli' do
+    code <<-EOH
+    pip3 install awscli boto3
+    EOH
+    action :run
+end
