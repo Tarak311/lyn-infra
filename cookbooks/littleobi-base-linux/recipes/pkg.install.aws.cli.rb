@@ -4,3 +4,4 @@ dnf_package 'pip3' do
     action         :install # defaults to :install if not specified
 end
 
+bash
