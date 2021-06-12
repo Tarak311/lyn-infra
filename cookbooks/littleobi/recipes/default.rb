@@ -1,7 +1,5 @@
 #
-# Cookbook:: primary_server
+# Cookbook:: littleobi
 # Recipe:: default
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
-
-include_recipe 'littleobi-base-linux::default'

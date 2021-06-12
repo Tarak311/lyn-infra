@@ -4,13 +4,13 @@
 # https://docs.chef.io/policyfile/
 
 # A name that describes what the system you're building with Chef does.
-name 'littleobi-base-linux'
+name 'littleobi'
 
 # Where to find external cookbooks:
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'littleobi-base-linux::default' 
+run_list 'littleobi::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'littleobi-base-linux', path: '.'
+cookbook 'littleobi', path: '.'
