@@ -1,7 +1,6 @@
 
 
 include_recipe 'littleobi-base-linux::pkg.install.vscode'
-include_recipe 'littleobi-base-linux::pkg.install.aws.cli'
 include_recipe 'littleobi-base-linux::pkg.install.hashicrop'
 
 group 'kube' do
