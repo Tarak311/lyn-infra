@@ -4,3 +4,5 @@ dnf_package 'pip3' do
     action         :install # defaults to :install if not specified
 end
 
+littleobi_pip3 'boto3'   
+littleobi_pip3 'awscli'
