@@ -16,7 +16,7 @@
 ## Ignore Chef-Zero files
 clients
 nodes
-
+.kitchen/*
 # ## OS junk files
 # [Tt]humbs.db
 # *.DS_Store
@@ -123,3 +123,4 @@ nodes
 # ## Office Temp Files
 # ~$*
 secret_key
+.kitchen/logs/kitchen.log
