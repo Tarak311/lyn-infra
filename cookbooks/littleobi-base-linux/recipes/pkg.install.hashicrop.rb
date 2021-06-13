@@ -18,6 +18,6 @@ include_recipe 'littleobi-base-linux::reinit.base'
 
 dnf_package  'terraform' do
     flush_cache [ :after ]
-    package_name   %w(terraform)
+    package_name   %w(terraform vagrant) 
     action         :install # defaults to :install if not specified
 end
