@@ -22,3 +22,4 @@ cookbook 'yumgroup', '~> 0.6.0', :supermarket
 cookbook 'chef-client', '~> 12.3.4', :supermarket
 cookbook 'yum-centos', '~> 5.1.1', :supermarket
 cookbook 'yum', '~> 6.1.1', :supermarket
+cookbook 'littleobi', path: '../cookbooks/littleobi/'

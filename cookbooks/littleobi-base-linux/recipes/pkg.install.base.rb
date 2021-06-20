@@ -20,7 +20,7 @@ when 'centos'
 
   dnf_package 'core-tools' do
     flush_cache [ :after ]
-    package_name   %w(redhat-lsb-core epel-release kernel-headers kernel-devel lvm2 htop tmux )
+    package_name   %w(redhat-lsb-core epel-release kernel-headers kernel-devel lvm2  tmux )
     action         :install # defaults to :install if not specified
   end
 
@@ -50,7 +50,7 @@ when 'fedora'
 
   dnf_package 'core-tools' do
     flush_cache [ :after ]
-    package_name   %w(redhat-lsb-core  kernel-headers kernel-devel lvm2 htop tmux )
+    package_name   %w(redhat-lsb-core  kernel-headers kernel-devel lvm2  tmux )
     action         :install # defaults to :install if not specified
   end
 

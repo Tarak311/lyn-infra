@@ -1,5 +1,5 @@
 {
-  "revision_id": "962773111e8dffd8be958efcdbb82ad0d2286664d9c4d37447018c79f192f045",
+  "revision_id": "faad111719d9f5179c7315a67c010a37fe06e3ab6ec30a2ac871e43fde005970",
   "name": "primary_linux",
   "run_list": [
     "recipe[os-hardening::default]",
@@ -56,16 +56,36 @@
         "version": "4.0.1"
       }
     },
+    "littleobi": {
+      "version": "0.1.0",
+      "identifier": "3dae9ca89cf60eb42395cf4bf5bccf80d636541d",
+      "dotted_decimal_identifier": "17361961446340110.50704622142879164.228152256648221",
+      "source": "../cookbooks/littleobi",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": "https://github.com/Tarak311/lyn-infra.git",
+        "revision": "11eb0811513d2691e57947b4b36fd31f2e9acf36",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/development"
+        ]
+      },
+      "source_options": {
+        "path": "../cookbooks/littleobi"
+      }
+    },
     "littleobi-base-linux": {
       "version": "0.1.0",
-      "identifier": "06a08ae9882268f00f932700023fac4f7cc6cffd",
-      "dotted_decimal_identifier": "1865368344207976.67571119099478591.189457395798013",
+      "identifier": "7703dd4d96707da24d34e34c98eafad3c99945f4",
+      "dotted_decimal_identifier": "33499771252928637.45683835774212330.275787527308788",
       "source": "../cookbooks/littleobi-base-linux",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "f35fca015287054861a356257a376885e80677f1",
+        "revision": "11eb0811513d2691e57947b4b36fd31f2e9acf36",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -85,7 +105,7 @@
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "f35fca015287054861a356257a376885e80677f1",
+        "revision": "11eb0811513d2691e57947b4b36fd31f2e9acf36",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -120,14 +140,14 @@
     },
     "primary_server": {
       "version": "0.1.0",
-      "identifier": "6c6fbb139f9f90fc4c07e4f67e53c2c0b9948ab7",
-      "dotted_decimal_identifier": "30522146763546512.71015290920926803.214133003029175",
+      "identifier": "b97b14ad497fdfbcb211602ab5fb0c83152a4db2",
+      "dotted_decimal_identifier": "52208199428308959.53113083319203323.13757135343026",
       "source": "../cookbooks/primary_server",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "f35fca015287054861a356257a376885e80677f1",
+        "revision": "11eb0811513d2691e57947b4b36fd31f2e9acf36",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -219,6 +239,10 @@
         "= 4.0.1"
       ],
       [
+        "littleobi",
+        ">= 0.0.0"
+      ],
+      [
         "littleobi-base-linux",
         ">= 0.0.0"
       ],
@@ -279,6 +303,9 @@
       "line (4.0.1)": [
 
       ],
+      "littleobi (0.1.0)": [
+
+      ],
       "littleobi-base-linux (0.1.0)": [
         [
           "yumgroup",
@@ -306,6 +333,10 @@
         ],
         [
           "yum",
+          ">= 0.0.0"
+        ],
+        [
+          "littleobi",
           ">= 0.0.0"
         ]
       ],
