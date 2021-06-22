@@ -28,6 +28,13 @@ when 'centos'
     action :upgrade
   end
 
+  
+  template '/root/.tmux.conf' do
+    source '.tmux.conf.erb'
+    owner  'root'
+    group  'root'
+    mode   '0666'
+  end 
 
 when 'fedora'
   dnf_package 'plugin tools' do
@@ -57,4 +64,12 @@ when 'fedora'
   yumgroup 'Development Tools' do
     action :upgrade
   end
+  
+  template '/root/.tmux.conf' do
+    source '.tmux.conf.erb'
+    owner  'root'
+    group  'root'
+    mode   '0666'
+  end 
+
 end

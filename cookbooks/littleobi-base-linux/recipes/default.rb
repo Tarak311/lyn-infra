@@ -26,3 +26,10 @@ include_recipe 'littleobi-base-linux::reinit.base'
 include_recipe 'littleobi-base-linux::pkg.install.realmd'
 include_recipe 'littleobi-base-linux::pkg.install.haproxy'
 include_recipe 'littleobi-base-linux::reinit.base'
+
+template '/etc/sysctl.d/k8s.conf' do
+    source 'k8s.conf.erb'
+    owner  'root'
+    group  'root'
+    mode   '0644'
+  end 
