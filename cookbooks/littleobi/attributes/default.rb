@@ -31,6 +31,7 @@ default['littleobi']['htop']['enabled'] = false
 default['littleobi']['targetd']['enabled'] = false
 default['littleobi']['haproxy']['enabled'] = false
 default['littleobi']['glusterfs']['enabled'] = false
+default['littleobi']['heketi']['enabled'] = false
 
 default['littleobi']['selinux']['enabled'] = false
 default['littleobi']['firewalld']['enabled'] = false
