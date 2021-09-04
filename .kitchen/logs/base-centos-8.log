@@ -1,0 +1,25 @@
+I, [2021-09-02T23:35:10.424300 #11736]  INFO -- base-centos-8: -----> Converging <base-centos-8>...
+I, [2021-09-02T23:35:10.789413 #11736]  INFO -- base-centos-8: Preparing files for transfer
+I, [2021-09-02T23:35:10.790226 #11736]  INFO -- base-centos-8: Preparing dna.json
+I, [2021-09-02T23:35:10.793961 #11736]  INFO -- base-centos-8: Preparing cookbooks from project directory
+I, [2021-09-02T23:35:11.765320 #11736]  INFO -- base-centos-8: Removing non-cookbook files before transfer
+I, [2021-09-02T23:35:12.173687 #11736]  INFO -- base-centos-8: Preparing data_bags
+I, [2021-09-02T23:35:12.192992 #11736]  INFO -- base-centos-8: Preparing roles
+I, [2021-09-02T23:35:12.197248 #11736]  INFO -- base-centos-8: Preparing solo.rb
+I, [2021-09-02T23:35:13.389560 #11736]  INFO -- base-centos-8: -----> Chef installation detected (install only if missing)
+I, [2021-09-02T23:35:13.964665 #11736]  INFO -- base-centos-8: Transferring files to <base-centos-8>
+I, [2021-09-02T23:35:27.065025 #11736]  INFO -- base-centos-8: Chef Infra Client, version 17.4.38
+I, [2021-09-02T23:35:27.065396 #11736]  INFO -- base-centos-8: Patents: https://www.chef.io/patents
+I, [2021-09-02T23:35:27.068130 #11736]  INFO -- base-centos-8: Infra Phase starting
+I, [2021-09-02T23:35:36.071103 #11736]  INFO -- base-centos-8: Resolving cookbooks for run list: []
+I, [2021-09-02T23:35:36.233586 #11736]  INFO -- base-centos-8: Synchronizing cookbooks:
+I, [2021-09-02T23:35:36.257141 #11736]  INFO -- base-centos-8: Installing cookbook gem dependencies:
+I, [2021-09-02T23:35:36.257556 #11736]  INFO -- base-centos-8: Compiling cookbooks...
+I, [2021-09-02T23:35:36.257949 #11736]  INFO -- base-centos-8: [2021-09-03T03:35:35+00:00] WARN: Node base-centos-8 has an empty run list.
+I, [2021-09-02T23:35:36.261769 #11736]  INFO -- base-centos-8: Converging 0 resources
+I, [2021-09-02T23:35:36.692650 #11736]  INFO -- base-centos-8: 
+I, [2021-09-02T23:35:36.692871 #11736]  INFO -- base-centos-8: Running handlers:
+I, [2021-09-02T23:35:36.693013 #11736]  INFO -- base-centos-8: Running handlers complete
+I, [2021-09-02T23:35:36.693144 #11736]  INFO -- base-centos-8: Infra Phase complete, 0/0 resources updated in 09 seconds
+I, [2021-09-02T23:35:36.762590 #11736]  INFO -- base-centos-8: Downloading files from <base-centos-8>
+I, [2021-09-02T23:35:36.960296 #11736]  INFO -- base-centos-8: Finished converging <base-centos-8> (0m26.53s).

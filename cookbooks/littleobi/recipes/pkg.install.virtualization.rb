@@ -5,7 +5,6 @@ dnf_package 'virt-tools' do
 end
 
 case node['platform']
-
 when 'fedora'
   dnf_package 'virt-tools-fedora' do
     flush_cache [ :after ]
