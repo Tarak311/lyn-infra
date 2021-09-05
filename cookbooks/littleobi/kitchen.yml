@@ -28,9 +28,7 @@ verifier:
   name: inspec
 
 platforms:
-#  - name: fedora-latest
   - name: centos-8
-
 suites:
   - name: default
     verifier:

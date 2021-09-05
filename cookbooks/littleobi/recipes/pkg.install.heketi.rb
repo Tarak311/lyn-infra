@@ -1,4 +1,4 @@
-if default['littleobi']['heketi']['enabled']
+if node['littleobi']['heketi']['enabled']
 
     heketi_modules = [dm_snapshot, dm_mirror, dm_thin_pool]
     heketi_modules.each { |x| 

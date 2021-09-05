@@ -1,5 +1,5 @@
 
-if  default['littleobi']['gns3']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
+if  node['littleobi']['gns3']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
     if (node['platform'] =="centos" || node['platform'] =="fedora")
         bash 'Clean rpm/yum/dnf chache' do
             user 'root'
@@ -108,6 +108,42 @@ if  default['littleobi']['gns3']['enabled'] # This variable is set in attributes
             sudo make install
             EOH
         end
-    end
+    elsif  (node['platform'] =="ubuntu" || node['platform'] =="mint")
 
+        package 'software-properties-common'
+
+        apt_update 'after_update_gns3' do
+            ignore_failure true
+            action :update
+            subscribes :add, 'resource[gns3-repo]', :immediately
+        end
+        
+        bash 'add_32-bit_support' do
+            user 'root'
+            cwd '/tmp/'
+            code <<-EOH
+                dpkg --add-architecture i386
+            EOH
+        end
+
+        apt_repository 'gns3-repo' do
+            uri          'ppa:gns3/ppa'
+            action :add
+        end
+
+        package 'gns3-tools' do
+            package_name   %w(gns3-gui gns3-server gns3-iou)
+            action         :install # defaults to :install if not specified
+        end        
+    end
+    
+    include_recipe 'littleobi-kube::pkg.install.docker'
+    group_list = ["ubridge", "libvirt", "kvm", "wireshark"]
+    group_list.each { |x| 
+        group "#{x}" do
+            append true
+            members %w(administrator)
+            action :create
+        end
+    }
 end

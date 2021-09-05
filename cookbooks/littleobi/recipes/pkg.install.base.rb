@@ -1,5 +1,6 @@
 case node['platform']
 when 'centos'
+
   dnf_package 'plugin tools' do
     flush_cache [ :after ]
     package_name   %w(dnf-plugins-core )
@@ -20,7 +21,7 @@ when 'centos'
 
   dnf_package 'core-tools' do
     flush_cache [ :after ]
-    package_name   %w(redhat-lsb-core epel-release kernel-headers kernel-devel lvm2  tmux )
+    package_name   %w(redhat-lsb-core elrepo-release epel-release kernel-headers kernel-devel lvm2  tmux )
     action         :install # defaults to :install if not specified
   end
 
@@ -28,7 +29,23 @@ when 'centos'
     action :upgrade
   end
 
-  
+  if node['littleobi']['lvm2']['enabled']
+    dnf_package 'network-tools' do
+      flush_cache [ :after ]
+      package_name   %w(lvm2 )
+      action         :install # defaults to :install if not specified
+    end
+  end
+  if node['littleobi']['btrfs']['enabled']
+    dnf_package 'btrfs-progs' do
+      flush_cache [ :after ]
+      action :install
+    end
+    
+  end
+  if node['littleobi']['exfat']['enabled']
+  end
+
   template '/root/.tmux.conf' do
     source '.tmux.conf.erb'
     owner  'root'
@@ -57,14 +74,19 @@ when 'fedora'
 
   dnf_package 'core-tools' do
     flush_cache [ :after ]
-    package_name   %w(redhat-lsb-core  kernel-headers kernel-devel lvm2  tmux )
+    package_name   %w(redhat-lsb-core  kernel-headers kernel-devel lvm2 htop tmux )
     action         :install # defaults to :install if not specified
   end
 
   yumgroup 'Development Tools' do
     action :upgrade
   end
-  
+  if node['littleobi']['lvm2']['enabled']
+  end
+  if node['littleobi']['btrfs']['enabled']
+  end
+  if node['littleobi']['efat']['enabled']
+  end
   template '/root/.tmux.conf' do
     source '.tmux.conf.erb'
     owner  'root'

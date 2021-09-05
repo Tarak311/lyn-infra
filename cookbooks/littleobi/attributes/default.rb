@@ -6,43 +6,42 @@ node.override['yum']['powertools']['enabled'] = true
 
 # Packages Installed
 
-default['littleobi']['virtualbox']['enabled'] = false
-default['littleobi']['kvm']['enabled'] = false
-default['littleobi']['gns3']['enabled'] = false
+default['littleobi']['Virtualbox']['enabled'] = true
+
+default['littleobi']['virt-tools']['enabled'] = true
+default['littleobi']['gns3']['enabled'] = true
 default['littleobi']['kube']['enabled'] = false
 
-default['littleobi']['vscode']['enabled'] = false
-default['littleobi']['cockpit']['enabled'] = false
-default['littleobi']['hashicrop']['enabled'] = false
+default['littleobi']['vscode']['enabled'] = true
+default['littleobi']['cockpit']['enabled'] = true
+default['littleobi']['hashicrop']['enabled'] = true
 
-default['littleobi']['terraform']['install'] =  false
-default['littleobi']['packer']['install'] =  false
-default['littleobi']['vagrant']['install'] = false
+default['littleobi']['terraform']['install'] =  true
+default['littleobi']['packer']['install'] =  true
+default['littleobi']['vagrant']['install'] = true
 
-default['littleobi']['awscli']['enabled'] = false
+default['littleobi']['awscli']['enabled'] = true
 default['littleobi']['azurecli']['enabled'] = false
 default['littleobi']['powershell']['enabled'] = false
 
-default['littleobi']['tmux']['enabled'] = false
-default['littleobi']['screen']['enabled'] = false
-default['littleobi']['htop']['enabled'] = false
 
 
-default['littleobi']['targetd']['enabled'] = false
-default['littleobi']['haproxy']['enabled'] = false
-default['littleobi']['glusterfs']['enabled'] = false
-default['littleobi']['heketi']['enabled'] = false
 
-default['littleobi']['selinux']['enabled'] = false
-default['littleobi']['firewalld']['enabled'] = false
+default['littleobi']['iscsi-tools']['enabled'] = true
+default['littleobi']['haproxy']['enabled'] = true
+default['littleobi']['glusterfs']['enabled'] = true
+default['littleobi']['heketi']['enabled'] = true
+
+default['littleobi']['selinux-tools']['enabled'] = true
 
 
-default['littleobi']['btrfs']['enabled'] = false
-default['littleobi']['fatfs']['enabled'] = false
+default['littleobi']['btrfs']['enabled'] = true
 default['littleobi']['ntfs']['enabled'] = false
+default['littleobi']['lvm2']['enabled'] = true
+default['littleobi']['exfat']['enabled'] = true
 
 default['littleobi']['docker']['enabled'] = false
-default['littleobi']['podman']['disable'] = true
+default['littleobi']['ad-tools']['enabled'] = true
 
 
 

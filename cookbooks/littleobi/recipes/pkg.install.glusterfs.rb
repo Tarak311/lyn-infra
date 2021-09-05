@@ -1,5 +1,5 @@
 
-if  default['littleobi']['glusterfs']['enabled']
+if  node['littleobi']['glusterfs']['enabled']
     case node['platform']
     when 'centos'
 
@@ -37,7 +37,6 @@ if  default['littleobi']['glusterfs']['enabled']
         end
 
         package 'glusterfs-server' do
-            flush_cache [ :after ]
             package_name   %w(glusterfs-server)
             action         :install # defaults to :install if not specified
         end

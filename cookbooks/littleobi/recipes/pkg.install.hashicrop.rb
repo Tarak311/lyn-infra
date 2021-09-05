@@ -8,7 +8,7 @@
 
 
 
-if  default['littleobi']['hashicrop']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
+if  node['littleobi']['hashicrop']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
     case node['platform']
 
     when 'centos'
@@ -40,32 +40,48 @@ if  default['littleobi']['hashicrop']['enabled'] # This variable is set in attri
             gpgcheck        true
             gpgkey          'https://rpm.releases.hashicorp.com/gpg'
         end
+        
+        include_recipe 'littleobi::reinit.base'
+
+    when 'ubuntu'
+        package 'apt-tools' do
+            package_name %w(gnupg software-properties-common curl)
+            action :install
+        end
+        apt_update 'after_update_hashicrop' do
+            ignore_failure true
+            action :update
+            subscribes :add, 'resource[hashi-repo]', :immediately
+        end
+        apt_repository 'hashi-repo' do
+            uri          'https://apt.releases.hashicorp.com'
+            distribution "#{node['platform']}-#{node['lsb']['codename']}"
+            components ["main"]
+            key  "https://apt.releases.hashicorp.com/gpg"
+            action :add
+        end
+         
     end
 
-    include_recipe 'littleobi::reinit.base'
+    if  node['littleobi']['terraform']['install'] # This variable is set in attributes file or during node bootstrap, please override these variables.
 
-    if  default['littleobi']['terraform']['install'] # This variable is set in attributes file or during node bootstrap, please override these variables.
-
-        dnf_package  'terraform' do
-            flush_cache [ :after ]
+        package  'terraform' do
             package_name   %w(terraform) 
             action         :install # defaults to :install if not specified
         end
     end
 
-    if  default['littleobi']['packer']['install'] # This variable is set in attributes file or during node bootstrap, please override these variables.
+    if  node['littleobi']['packer']['install'] # This variable is set in attributes file or during node bootstrap, please override these variables.
 
-        dnf_package  'packer' do
-            flush_cache [ :after ]
+        package  'packer' do
             package_name   %w(packer) 
             action         :install # defaults to :install if not specified
         end
     end
 
-    if  default['littleobi']['vagrant']['install'] # This variable is set in attributes file or during node bootstrap, please override these variables.
+    if  node['littleobi']['vagrant']['install'] # This variable is set in attributes file or during node bootstrap, please override these variables.
 
-        dnf_package  'vagrant' do
-            flush_cache [ :after ]
+        package  'vagrant' do
             package_name   %w(vagrant) 
             action         :install # defaults to :install if not specified
         end

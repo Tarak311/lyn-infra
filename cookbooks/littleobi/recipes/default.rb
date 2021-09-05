@@ -3,6 +3,11 @@
 # Recipe:: default
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
+user 'administrator' do
+  comment 'Local Administrator account'
+  password 'qwertyuiop'
+  action :create
+end
 
 include_recipe 'yum-centos::default'
 include_recipe 'yum::default'
@@ -15,7 +20,7 @@ include_recipe 'littleobi::reinit.base'
 include_recipe 'littleobi::pkg.install.firewalld'
 include_recipe 'littleobi::pkg.install.virtualization'
 include_recipe 'littleobi::reinit.base'
-include_recipe 'littleobi-kube::default'
+#include_recipe 'littleobi-kube::default'
 include_recipe 'littleobi::pkg.install.gns3'
 include_recipe 'littleobi::pkg.install.glusterfs'
 include_recipe 'littleobi::config.glusterfs'
@@ -29,4 +34,4 @@ template '/etc/sysctl.d/k8s.conf' do
     owner  'root'
     group  'root'
     mode   '0644'
-  end 
+end 

@@ -1,6 +1,6 @@
 
 
-if  default['littleobi']['cockpit']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
+if  node['littleobi']['cockpit']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
   case node['platform']
   when 'centos'
     dnf_package 'cookpit' do
@@ -37,7 +37,6 @@ if  default['littleobi']['cockpit']['enabled'] # This variable is set in attribu
   when 'ubuntu'
     
     package 'cockpit' do 
-      flush_cache [ :after ]
       package_name   %w(cockpit)
       action :install
     end
