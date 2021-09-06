@@ -2,7 +2,7 @@ case node['platform']
 when 'centos'
 
   dnf_package 'plugin tools' do
-    flush_cache [ :after ]
+    flush_cache [ :after ] 
     package_name   %w(dnf-plugins-core )
     action         :install # defaults to :install if not specified
   end
@@ -11,6 +11,19 @@ when 'centos'
     flush_cache [ :after ]
     package_name   %w(net-tools NetworkManager-wifi wget curl git )
     action         :install # defaults to :install if not specified
+  end
+  remote_file '/tmp/elrepo-release-8.2-1.el8.elrepo.noarch.rpm' do
+    source 'http://mirror.rackspace.com/elrepo/elrepo/el8/x86_64/RPMS/elrepo-release-8.2-1.el8.elrepo.noarch.rpm'
+    owner 'root'
+    group 'root'
+    mode '0755'
+    action :create
+  end
+  
+  
+  package "elrepo-release-8.2-1.el8.elrepo.noarch.rpm" do
+    source "/tmp/elrepo-release-8.2-1.el8.elrepo.noarch.rpm"
+    action :install
   end
 
   dnf_package 'automation-install-tools' do
@@ -37,10 +50,12 @@ when 'centos'
     end
   end
   if node['littleobi']['btrfs']['enabled']
-    dnf_package 'btrfs-progs' do
-      flush_cache [ :after ]
-      action :install
-    end
+  bash 'btrfs-install' do
+    code <<-EOH
+    dnf --enablerepo=elrepo-testing install elrepo-release
+    EOH
+    action :run
+  end
     
   end
   if node['littleobi']['exfat']['enabled']
@@ -83,7 +98,12 @@ when 'fedora'
   end
   if node['littleobi']['lvm2']['enabled']
   end
-  if node['littleobi']['btrfs']['enabled']
+  if node['littleobi']['btrfs']['enabled']  
+    dnf_package 'btrfs-progs' do
+      flush_cache [ :after ]
+      action :install
+    end
+    
   end
   if node['littleobi']['efat']['enabled']
   end

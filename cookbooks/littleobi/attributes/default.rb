@@ -10,7 +10,6 @@ default['littleobi']['Virtualbox']['enabled'] = true
 
 default['littleobi']['virt-tools']['enabled'] = true
 default['littleobi']['gns3']['enabled'] = true
-default['littleobi']['kube']['enabled'] = false
 
 default['littleobi']['vscode']['enabled'] = true
 default['littleobi']['cockpit']['enabled'] = true
@@ -23,8 +22,9 @@ default['littleobi']['vagrant']['install'] = true
 default['littleobi']['awscli']['enabled'] = true
 default['littleobi']['azurecli']['enabled'] = false
 default['littleobi']['powershell']['enabled'] = false
+override['littleobi']['docker']['enabled'] = true   
 
-
+override['littleobi']['kube']['enabled'] = true
 
 
 default['littleobi']['iscsi-tools']['enabled'] = true
@@ -40,7 +40,6 @@ default['littleobi']['ntfs']['enabled'] = false
 default['littleobi']['lvm2']['enabled'] = true
 default['littleobi']['exfat']['enabled'] = true
 
-default['littleobi']['docker']['enabled'] = false
 default['littleobi']['ad-tools']['enabled'] = true
 
 
