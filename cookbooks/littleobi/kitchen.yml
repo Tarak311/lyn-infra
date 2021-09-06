@@ -28,7 +28,9 @@ verifier:
   name: inspec
 
 platforms:
-  - name: centos-8
+#  - name: ubuntu-20.04
+- name: fedora-34
+#- name: centos
 suites:
   - name: default
     verifier:

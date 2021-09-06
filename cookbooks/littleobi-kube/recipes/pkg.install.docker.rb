@@ -57,6 +57,11 @@ if  node['littleobi']['docker']['enabled']
         yum update -y --allowerasing
         EOH
     end
+
+    service 'docker' do
+      pattern 'docker'
+      action [:enable, :start]
+    end
    
   when 'fedora'
     yum_repository 'docker-ce' do
@@ -83,11 +88,14 @@ if  node['littleobi']['docker']['enabled']
       package_name   %w(docker-ce docker-ce-cli containerd.io)
       action         :install # defaults to :install if not specified
     end
-  
+     
+    service 'docker' do
+      pattern 'docker'
+      action [:enable, :start]
+    end
    
   when 'ubuntu'
     package 'docker-requirment' do
-      flush_cache [ :after ]
       package_name %w( apt-transport-https  ca-certificates curl gnupg lsb-release )
       action :install
     end
@@ -100,17 +108,10 @@ if  node['littleobi']['docker']['enabled']
         subscribes :add, 'resource[docker-repo]', :immediately
     end
     
-    apt_repository 'docker-repo' do
-        uri          'https://download.docker.com/linux/ubuntu/ '
-        distribution "#{node['platform']}-#{node['lsb']['codename']}"
-        components ["main"]
-        key  "https://download.docker.com/linux/ubuntu/gpg"
-        action :add
-    end
+    
   
     apt_package 'docker' do
-      flush_cache [ :after ]
-      package_name %w(docker-ce docker-ce-cli containerd.io )
+      package_name %w(docker docker containerd.io )
       action :install
     end
     
@@ -118,14 +119,11 @@ if  node['littleobi']['docker']['enabled']
   
   group 'docker' do
     append true
-    members %w($USER administrator)
+    members %w(administrator)
     action :create
   end
   
-  service 'docker' do
-    pattern 'docker'
-    action [:enable, :start]
-  end
+  
 end
 
 
