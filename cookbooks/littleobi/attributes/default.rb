@@ -4,11 +4,23 @@ default['yum']['main']['exclude'] = nil
 node.override['yum']['powertools']['managed'] = true
 node.override['yum']['powertools']['enabled'] = true
 
+#enable vfat for UEFI systems
+override['os-hardening']['security']['kernel']['disable_filesystems'] = %w(cramfs freevxfs jffs2 hfs hfsplus squashfs udf )
+
+#enable SELINUX in permissive 
+
+override['os-hardening']['security']['selinux_mode'] = 'permissive'
+
+#enable packages provided by kube cookbook.
+
+override['littleobi']['docker']['enabled'] = true   
+override['littleobi']['kubeadm']['enabled'] = true
+
 # Packages Installed
 
 default['littleobi']['Virtualbox']['enabled'] = true
-
 default['littleobi']['virt-tools']['enabled'] = true
+
 default['littleobi']['gns3']['enabled'] = true
 
 default['littleobi']['vscode']['enabled'] = true
@@ -22,9 +34,10 @@ default['littleobi']['vagrant']['install'] = true
 default['littleobi']['awscli']['enabled'] = true
 default['littleobi']['azurecli']['enabled'] = false
 default['littleobi']['powershell']['enabled'] = false
-override['littleobi']['docker']['enabled'] = true   
 
-override['littleobi']['kube']['enabled'] = true
+
+
+
 
 
 default['littleobi']['iscsi-tools']['enabled'] = true

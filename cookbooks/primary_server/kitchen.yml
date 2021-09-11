@@ -2,7 +2,7 @@
 driver:
   name: vagrant
   customize:
-    memory: 2048
+    memory: 1024
     cpus: 2
 
 provisioner:
@@ -15,7 +15,6 @@ suites:
     driver:
       vm_hostname: primary.littleobi.com
       network:
-      - ["private_network", {ip: "172.253.253.0"}]
       - ["forwarded_port", {guest: 80, host: 8480}] 
       - ["forwarded_port", {guest: 443, host: 4343  }] 
       run_list:

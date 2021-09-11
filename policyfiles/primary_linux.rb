@@ -10,14 +10,13 @@ name 'primary_linux'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'os-hardening::default', 'chef-client::default', 'littleobi::default', 'littleobi-kube::init.master.kube' 
+run_list  'os-hardening::default' 'littleobi::default', 'littleobi-kube::init.master.kube' 
 
 # Specify a custom source for a single cookbook:
 cookbook 'littleobi-kube','= 0.0.1', path: '../cookbooks/littleobi-kube/'
 cookbook 'selinux', '~> 3.1.1', :supermarket
 cookbook 'os-hardening', '= 4.0.0', :supermarket
 cookbook 'yumgroup', '~> 0.6.0', :supermarket
-cookbook 'chef-client', '~> 12.3.4', :supermarket
 cookbook 'yum-centos', '~> 5.1.1', :supermarket
 cookbook 'yum', '~> 6.1.1', :supermarket
 cookbook 'littleobi', path: '../cookbooks/littleobi/'

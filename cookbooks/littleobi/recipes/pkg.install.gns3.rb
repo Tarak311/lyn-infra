@@ -1,14 +1,7 @@
 
 if  node['littleobi']['gns3']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
     if (node['platform'] =="centos" || node['platform'] =="fedora")
-        bash 'Clean rpm/yum/dnf chache' do
-            user 'root'
-            cwd '/tmp'
-            code <<-EOH
-            dnf clean all
-            yum update -y
-            EOH
-        end
+        include_recipe 'littleobi::reinit.base'
         
 
         dnf_package 'gns3-tools' do

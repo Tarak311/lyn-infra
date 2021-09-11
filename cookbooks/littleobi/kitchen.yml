@@ -29,10 +29,10 @@ verifier:
 
 platforms:
 #  - name: ubuntu-20.04
-- name: fedora-34
+- name: fedora-32
 #- name: centos
 suites:
-  - name: default
+  - name: test-server-0
     verifier:
       inspec_tests:
         - name: linux-baseline

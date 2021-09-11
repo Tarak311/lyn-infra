@@ -19,44 +19,45 @@ if  node['littleobi']['docker']['enabled']
       baseurl         'https://download.docker.com/linux/centos/$releasever/$basearch/stable'
       description     'Repo for Docker-CR'
       enabled         true
-      gpgcheck        true
+      gpgcheck        false
       gpgkey          'https://download.docker.com/linux/centos/gpg'
     end
   
-    bash 'Clean rpm/yum/dnf chache' do
-      user 'root'
-      cwd '/tmp'
-      code <<-EOH
-        dnf autoremove -y
-        dnf clean all -y
-        yum update -y --allowerasing
-        EOH
-    end
+   include_recipe 'littleobi-kube::reinit.base'
   
   
     
+    dnf_package 'podman' do
+      flush_cache [ :after ]
+      package_name   %w(podman)
+      action         :remove # defaults to :install if not specified
+    end
+
+    ruby 'Clean rpm/yum/dnf chache' do
+      interpreter 'bash' 
+      code <<-EOH
+        dnf clean all
+        yum update -y --allowerasing --best 
+      EOH
+      not_if { ::File.exist?('/tmp/kubeinit.log') }
+    end
     
     dnf_package 'docker-ce' do
       flush_cache [ :after ]
       package_name   %w(docker-ce)
       action         :install # defaults to :install if not specified
     end
-  
-    dnf_package 'podman' do
-      flush_cache [ :after ]
-      package_name   %w(podman)
-      action         :remove # defaults to :install if not specified
-    end
-  
-    bash 'Clean rpm/yum/dnf chache' do
-      user 'root'
-      cwd '/tmp'
+
+    ruby 'Clean rpm/yum/dnf chache' do
+      interpreter 'bash' 
       code <<-EOH
-        dnf autoremove -y
-        dnf clean all -y
-        yum update -y --allowerasing
-        EOH
+        dnf clean all
+        yum update -y --allowerasing --best 
+      EOH
+      not_if { ::File.exist?('/tmp/kubeinit.log') }
     end
+
+    include_recipe 'littleobi-kube::reinit.base'
 
     service 'docker' do
       pattern 'docker'
@@ -72,14 +73,7 @@ if  node['littleobi']['docker']['enabled']
       gpgkey          'https://download.docker.com/linux/fedora/gpg'
     end
     
-    bash 'Clean rpm/yum/dnf chache' do
-      user 'root'
-      cwd '/tmp'
-      code <<-EOH
-        dnf clean all
-        yum update -y --allowerasing
-        EOH
-    end
+   include_recipe 'littleobi-kube::reinit.base'
     
     
     

@@ -28,7 +28,7 @@ when 'centos'
 
   dnf_package 'automation-install-tools' do
     flush_cache [ :after ]
-    package_name   %w(python3 make patch gcc ruby)
+    package_name   %w(python3 make patch gcc )
     action         :install # defaults to :install if not specified
     end
 
@@ -83,7 +83,7 @@ when 'fedora'
 
   dnf_package 'automation-install-tools' do
     flush_cache [ :after ]
-    package_name   %w(python3 make patch gcc ruby)
+    package_name   %w(python3 make patch gcc)
     action         :install # defaults to :install if not specified
     end
 
@@ -92,20 +92,14 @@ when 'fedora'
     package_name   %w(redhat-lsb-core  kernel-headers kernel-devel lvm2 htop tmux )
     action         :install # defaults to :install if not specified
   end
-
+  
+  
   yumgroup 'Development Tools' do
     action :upgrade
   end
-  if node['littleobi']['lvm2']['enabled']
-  end
-  if node['littleobi']['btrfs']['enabled']  
-    dnf_package 'btrfs-progs' do
-      flush_cache [ :after ]
-      action :install
-    end
-    
-  end
-  if node['littleobi']['efat']['enabled']
+  
+  
+  if node['littleobi']['exfat']['enabled']
   end
   template '/root/.tmux.conf' do
     source '.tmux.conf.erb'

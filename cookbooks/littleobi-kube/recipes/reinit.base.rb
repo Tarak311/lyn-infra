@@ -1,15 +1,14 @@
 case node['platform']
 
 when 'centos'
-  
   ruby 'Clean rpm/yum/dnf chache' do
     interpreter 'bash' 
     code <<-EOH
       dnf clean all
-      yum update -y --allowerasing
+      yum update -y --allowerasing 
     EOH
   end
-  
+
 when 'ubuntu'
   bash 'Clean rpm/yum/dnf chache' do
     user 'root'
@@ -24,7 +23,7 @@ when 'fedora'
     cwd '/tmp'
     code <<-EOH
       dnf clean all
-      yum update -y --allowerasing
+      yum update -y --allowerasing 
       EOH
   end
 end

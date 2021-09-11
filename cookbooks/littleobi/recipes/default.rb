@@ -3,11 +3,7 @@
 # Recipe:: default
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
-user 'administrator' do
-  comment 'Local Administrator account'
-  password 'qwertyuiop'
-  action :create
-end
+
 
 include_recipe 'yum-centos::default'
 include_recipe 'yum::default'
