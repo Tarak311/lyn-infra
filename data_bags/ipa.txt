@@ -1,0 +1,1 @@
+sudo docker run -d -h ipa.example.test --name my-freeipa-server -p 80:80 -p 443:443 -p 389:389 -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /var/lib/ipa-data:/data:Z -e PASSWOR=Secret123 --systemctl net.ipv6.conf.all.disable_ipv6=0 freeipa/freeipa-server:centos-8-4.8.7 ipa-server-install -U -r EXAMPLE.TEST --no=ntp
