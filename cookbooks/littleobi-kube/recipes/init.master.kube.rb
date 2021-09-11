@@ -7,6 +7,13 @@ when 'centos'
         sudo sed -i '/ swap / s/^/#/' /etc/fstab
         EOH
     end
+
+    directory '/etc/docker/' do
+        owner 'root'
+        group 'docker'
+        
+        mode '0755'
+    end
   
     dnf_package 'zram-generator-defaults' do 
         action :remove
@@ -16,6 +23,32 @@ when 'centos'
         pattern 'swap-create@zram0' 
         subscribes  :stop , 'dnf_package[zram-generator-defaults], :immediately'
     end
+    
+
+    template '/etc/docker/daemon.json' do
+        source 'daemon.json.erb'
+        owner 'root'
+        group 'docker'
+        mode '0755'
+        action :create
+    end
+
+    service 'docker' do
+        action [:enable, :start]
+    end
+    
+
+    bash 'deamon-reload' do
+        code <<-EOH
+        systemctl daemon-reload
+        EOH
+        action :run
+    end
+    
+    service 'docker' do
+        action [:enable, :restart]
+    end
+    
 
     bash 'Init as master' do
         user 'root'
@@ -75,6 +108,30 @@ when 'fedora'
         subscribes  :stop , 'dnf_package[zram-generator-defaults]', :immediately
     end
 
+    template '/etc/docker/daemon.json' do
+        source 'daemon.json.erb'
+        owner 'root'
+        group 'docker'
+        mode '0755'
+        action :create
+    end
+
+    service 'docker' do
+        action [:enable, :start]
+    end
+    
+
+    bash 'deamon-reload' do
+        code <<-EOH
+        systemctl daemon-reload
+        EOH
+        action :run
+    end
+    
+    service 'docker' do
+        action [:enable, :restart]
+    end
+    
     bash 'Init as master' do
         user 'root'
         cwd '/tmp/'

@@ -4,4 +4,4 @@
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
-include_recipe 'littleobi-base-linux::default'
+include_recipe 'littleobi::default'
