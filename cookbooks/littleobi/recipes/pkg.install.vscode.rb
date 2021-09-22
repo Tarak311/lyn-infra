@@ -10,7 +10,7 @@ if  node['littleobi']['vscode']['enabled']
             gpgkey          'https://packages.microsoft.com/keys/microsoft.asc'
         end
         
-        include_recipe 'littleobi-base-linux::reinit.base'
+        include_recipe 'littleobi::reinit.base'
         
         dnf_package 'vscode' do
             flush_cache [ :after ]
@@ -26,7 +26,7 @@ if  node['littleobi']['vscode']['enabled']
             gpgkey          'https://packages.microsoft.com/keys/microsoft.asc'
         end
         
-        include_recipe 'littleobi-base-linux::reinit.base'
+        include_recipe 'littleobi::reinit.base'
         
         dnf_package 'vscode' do
             flush_cache [ :after ]

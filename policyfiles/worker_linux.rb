@@ -10,11 +10,9 @@ name 'worker_linux'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'os-hardening::default', 'worker_node::default'
+run_list 'os-hardening::default', 'littleobi::default'
 
 # Specify a custom source for a single cookbook:
-cookbook 'worker_node', path: '../cookbooks/worker_node/'
-cookbook 'primary_server', path: '../cookbooks/primary_server/'
 cookbook 'littleobi', path: '../cookbooks/littleobi/'
 cookbook 'littleobi-kube','= 0.0.1', path: '../cookbooks/littleobi-kube/'
 cookbook 'selinux', '~> 3.1.1', :supermarket

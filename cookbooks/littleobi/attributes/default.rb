@@ -27,18 +27,13 @@ default['littleobi']['vscode']['enabled'] = true
 default['littleobi']['cockpit']['enabled'] = true
 default['littleobi']['hashicrop']['enabled'] = true
 
-default['littleobi']['terraform']['install'] =  true
+default['littleobi']['terraform']['install'] = true
 default['littleobi']['packer']['install'] =  true
 default['littleobi']['vagrant']['install'] = true
 
 default['littleobi']['awscli']['enabled'] = true
 default['littleobi']['azurecli']['enabled'] = false
 default['littleobi']['powershell']['enabled'] = false
-
-
-
-
-
 
 default['littleobi']['iscsi-tools']['enabled'] = true
 default['littleobi']['haproxy']['enabled'] = true

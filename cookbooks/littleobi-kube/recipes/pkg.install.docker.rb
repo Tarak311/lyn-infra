@@ -3,7 +3,7 @@ if  node['littleobi']['docker']['enabled']
   case node['platform']
   when 'centos'
   
-    dnf_package 'docker-ce' do
+    dnf_package 'docker-ce-tools' do
       flush_cache [ :after ]
       package_name   %w(yum-utils)
       action         :install # defaults to :install if not specified
@@ -42,11 +42,13 @@ if  node['littleobi']['docker']['enabled']
       not_if { ::File.exist?('/tmp/kubeinit.log') }
     end
     
-    dnf_package 'docker-ce' do
-      flush_cache [ :after ]
-      package_name   %w(docker-ce)
-      action         :install # defaults to :install if not specified
+    bash 'docker_inst' do
+      code <<-EOH
+        yum install -y docker-ce --allowerasing 
+      EOH
+      action :run
     end
+    
 
     ruby 'Clean rpm/yum/dnf chache' do
       interpreter 'bash' 
