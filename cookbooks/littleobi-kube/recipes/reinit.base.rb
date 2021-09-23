@@ -23,7 +23,7 @@ when 'fedora'
     cwd '/tmp'
     code <<-EOH
       dnf clean all
-      yum update -y --allowerasing 
+      yum update -y --allowerasing
       EOH
   end
 end

@@ -37,7 +37,7 @@ if  node['littleobi']['docker']['enabled']
       interpreter 'bash' 
       code <<-EOH
         dnf clean all
-        yum update -y --allowerasing --best 
+        yum update -y --allowerasing 
       EOH
       not_if { ::File.exist?('/tmp/kubeinit.log') }
     end
@@ -54,7 +54,7 @@ if  node['littleobi']['docker']['enabled']
       interpreter 'bash' 
       code <<-EOH
         dnf clean all
-        yum update -y --allowerasing --best 
+        yum update -y --allowerasing 
       EOH
       not_if { ::File.exist?('/tmp/kubeinit.log') }
     end
