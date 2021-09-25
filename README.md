@@ -36,6 +36,16 @@ Now that you have the chef-repo ready to go, check out [Learn Chef](https://lear
 There are few requirments to be taken care of before bootstrapping any node.
 
 1. There should be an administrator account and this should be in wheel group.
-2. There should be sudo access through ssh, ssh-server should be on.
+2. There should be sudo access through ssh and ssh-server should be on.
 3. `/data/docker/images` should exist and there should be serperate LV volume with VDO at the base.
-4.  `/home/administrator/priv` and  `/priv` should exist and there should be serperate LV volume with LUKS at the base.
+4. `/home/administrator/priv` and  `/priv` should exist and there should be serperate LV volume with LUKS at the base.
+5. Make sure that `/data/heketi/config` and `/data/share/pubkey` are mounted with luks.
+6. Make sure that `/data/heketi/db` is mounted with high iops disk (primary_server).
+
+## Instruction for heketi-cli
+
+There are post task for heketi-cli that you can do.
+
+1. copy ssh-ids to all the server to designated accounts.
+2. change default password in 'vi /data/heketi/config/heketi.json', this should be 23rd and 28th line.
+2. `docker run -d -p 8080:8080 -v /data/heketi/config:/etc/heketi -v /data/heketi/db:/var/lib/heketi heketi/heketi` for running heketi-cli server after chef-client has ran in primary_server 

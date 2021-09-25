@@ -1,5 +1,5 @@
 {
-  "revision_id": "52a6eb4c6709f2e0ed1c642778f6555741731ab887e1049fc1d80f272e6b3038",
+  "revision_id": "209c9393ca1589e3bff76bebe14c0c765c44b90b31e0ede669f30815aa54de1b",
   "name": "worker_linux",
   "run_list": [
     "recipe[os-hardening::default]",
@@ -40,7 +40,7 @@
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "d2bc0047b8c984ef8a8f641d396032a34027fb9b",
+        "revision": "9c60a1b20fd0902fef7b7677e303b16c01406786",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -53,14 +53,14 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "c88fdb9ca3c1a67d34e1f66fb33df8d3ed8ce6d8",
-      "dotted_decimal_identifier": "56453168730718630.35242517195633469.273589107222232",
+      "identifier": "7d521fc8dd8f1dc30d33df81dedbe244c7a7d0dd",
+      "dotted_decimal_identifier": "35274668556259101.54902136902901467.248785035317469",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "d2bc0047b8c984ef8a8f641d396032a34027fb9b",
+        "revision": "9c60a1b20fd0902fef7b7677e303b16c01406786",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
