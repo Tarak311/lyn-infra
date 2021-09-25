@@ -31,7 +31,7 @@ Roles provide logical grouping of cookbooks and other roles. A sample role can b
 Now that you have the chef-repo ready to go, check out [Learn Chef](https://learn.chef.io/) to proceed with your workstation setup. If you have any questions about Chef you can always ask [our support team](https://www.chef.io/support/) for a helping hand.
 
 
-## Instruction for who uses cookbook when creating their own infrastructure
+## Instructions for cookbook and when creating their own infrastructure:
 
 There are few requirments to be taken care of before bootstrapping any node.
 
@@ -42,7 +42,7 @@ There are few requirments to be taken care of before bootstrapping any node.
 5. Make sure that `/data/heketi/config` and `/data/share/pubkey` are mounted with luks.
 6. Make sure that `/data/heketi/db` is mounted with high iops disk (primary_server).
 
-## Instruction for heketi-cli
+## Instructions for heketi-cli:
 
 There are post task for heketi-cli that you can do.
 
