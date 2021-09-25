@@ -1,6 +1,6 @@
 {
-  "revision_id": "18587c0d093827d27932e9d71b5d08b9c103d8f05edd5923d945592d528b9871",
-  "name": "primary_linux",
+  "revision_id": "309753f3a7fed31868ed104adae0bf6464d68eb45fcd89e5587df59b89a94f31",
+  "name": "primary_server",
   "run_list": [
     "recipe[os-hardening::default]",
     "recipe[littleobi::default]",
@@ -22,26 +22,26 @@
       }
     },
     "line": {
-      "version": "4.3.0",
-      "identifier": "6323268221f6986a8bb204e96b88dab83f67f6f2",
-      "dotted_decimal_identifier": "27904670993348248.29989944234175368.240484872615666",
-      "cache_key": "line-4.3.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.3.0/download",
+      "version": "4.4.1",
+      "identifier": "5cd87cba832a3429871aa5f58781266de3f77faf",
+      "dotted_decimal_identifier": "26133728074082868.11689022568368001.42253417938863",
+      "cache_key": "line-4.4.1-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.4.1/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.3.0/download",
-        "version": "4.3.0"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.4.1/download",
+        "version": "4.4.1"
       }
     },
     "littleobi": {
       "version": "0.1.0",
-      "identifier": "d2bc642d4183b8e3137a34e147d5cf4f149fc205",
-      "dotted_decimal_identifier": "59316883551257528.63916235307435989.227938555380229",
+      "identifier": "153762f1a26c3e51b602bd95e9e0cfcceb9a8de8",
+      "dotted_decimal_identifier": "5971872611200062.22999596000471520.228479033052648",
       "source": "../cookbooks/littleobi",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "f9b4d9182f1d2144ad8ef295ecffddcb35e74bca",
+        "revision": "cab1b85702716cbed1e31b85269287abffc4dc38",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -54,14 +54,14 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "22bc6d251cb526834a46cebd36c6758200b2a433",
-      "dotted_decimal_identifier": "9777326168257830.36954889925768902.129201217905715",
+      "identifier": "c88fdb9ca3c1a67d34e1f66fb33df8d3ed8ce6d8",
+      "dotted_decimal_identifier": "56453168730718630.35242517195633469.273589107222232",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "f9b4d9182f1d2144ad8ef295ecffddcb35e74bca",
+        "revision": "cab1b85702716cbed1e31b85269287abffc4dc38",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -143,7 +143,146 @@
 
   },
   "override_attributes": {
-
+    "workstation": {
+      "littleobi": {
+        "Virtualbox": {
+          "enabled": false
+        },
+        "virt-tools": {
+          "enabled": true
+        },
+        "gns3": {
+          "enabled": true
+        },
+        "vscode": {
+          "enabled": true
+        },
+        "cockpit": {
+          "enabled": false
+        },
+        "hashicrop": {
+          "enabled": true
+        },
+        "terraform": {
+          "install": true
+        },
+        "packer": {
+          "install": true
+        },
+        "vagrant": {
+          "install": true
+        },
+        "awscli": {
+          "enabled": true
+        },
+        "azurecli": {
+          "enabled": true
+        },
+        "powershell": {
+          "enabled": true
+        },
+        "iscsi-tools": {
+          "enabled": true
+        },
+        "haproxy": {
+          "enabled": true
+        },
+        "glusterfs": {
+          "enabled": true
+        },
+        "heketi": {
+          "enabled": true
+        },
+        "selinux-tools": {
+          "enabled": true
+        },
+        "btrfs": {
+          "enabled": true
+        },
+        "ntfs": {
+          "enabled": false
+        },
+        "lvm2": {
+          "enabled": true
+        },
+        "exfat": {
+          "enabled": true
+        },
+        "ad-tools": {
+          "enabled": true
+        }
+      }
+    },
+    "server": {
+      "littleobi": {
+        "Virtualbox": {
+          "enabled": false
+        },
+        "virt-tools": {
+          "enabled": true
+        },
+        "gns3": {
+          "enabled": true
+        },
+        "vscode": {
+          "enabled": false
+        },
+        "cockpit": {
+          "enabled": false
+        },
+        "hashicrop": {
+          "enabled": false
+        },
+        "terraform": {
+          "install": false
+        },
+        "packer": {
+          "install": false
+        },
+        "vagrant": {
+          "install": false
+        },
+        "awscli": {
+          "enabled": false
+        },
+        "azurecli": {
+          "enabled": false
+        },
+        "powershell": {
+          "enabled": false
+        },
+        "iscsi-tools": {
+          "enabled": true
+        },
+        "haproxy": {
+          "enabled": true
+        },
+        "glusterfs": {
+          "enabled": true
+        },
+        "heketi": {
+          "enabled": true
+        },
+        "selinux-tools": {
+          "enabled": true
+        },
+        "btrfs": {
+          "enabled": false
+        },
+        "ntfs": {
+          "enabled": false
+        },
+        "lvm2": {
+          "enabled": true
+        },
+        "exfat": {
+          "enabled": true
+        },
+        "ad-tools": {
+          "enabled": true
+        }
+      }
+    }
   },
   "solution_dependencies": {
     "Policyfile": [
@@ -153,7 +292,7 @@
       ],
       [
         "line",
-        "= 4.3.0"
+        "= 4.4.1"
       ],
       [
         "littleobi",
@@ -192,7 +331,7 @@
       "firewalld (1.2.1)": [
 
       ],
-      "line (4.3.0)": [
+      "line (4.4.1)": [
 
       ],
       "littleobi (0.1.0)": [
