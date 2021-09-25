@@ -49,3 +49,22 @@ There are post task for heketi-cli that you can do.
 1. copy ssh-ids to all the server to designated accounts.
 2. change default password in 'vi /data/heketi/config/heketi.json', this should be 23rd and 28th line.
 2. `docker run -d -p 8080:8080 -v /data/heketi/config:/etc/heketi -v /data/heketi/db:/var/lib/heketi heketi/heketi` for running heketi-cli server after chef-client has ran in primary_server 
+
+## Instruction for bootstraping nodes 
+
+1. Find the join commands in `/data/share/private`. 
+2. It should be something like: 
+
+```kubeadm join [ip]:6443 --token [your-token] --discovery-token-ca-cert-hash sha256:[hash]```
+
+                        OR
+you can create new one 
+
+`sudo kubeadm token create --print-join-command > joinkubecluster.sh`
+
+3. Run the command and enjoy!!!
+
+
+
+
+

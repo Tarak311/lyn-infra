@@ -88,7 +88,14 @@ when 'centos'
         not_if { ::File.exist?('/tmp/kubeinit.log') }
     end
 
-    
+    bash 'generate_token' do
+        user 'root'
+        cwd  '/tmp'
+        code <<-EOH
+        kubeadm token create --print-join-command > /data/share/priv/joinkubecluster.sh
+        EOH
+        only_if { ::File.exist?('/tmp/kubeinit.log') }
+    end
 
 when 'fedora'
     bash 'disable swap' do
@@ -174,7 +181,7 @@ when 'fedora'
         user 'root'
         cwd  '/tmp'
         code <<-EOH
-        KUBETOKEN=$(kubeadm token create --print-join-command)
+        kubeadm token create --print-join-command > /data/share/priv/joinkubecluster.sh
         EOH
         only_if { ::File.exist?('/tmp/kubeinit.log') }
     end
