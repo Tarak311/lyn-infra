@@ -17,7 +17,6 @@ include_recipe 'littleobi::pkg.install.firewalld'
 include_recipe 'littleobi::pkg.install.virtualization'
 include_recipe 'littleobi::reinit.base'
 include_recipe 'littleobi::pkg.install.vscode'
-include_recipe 'littleobi::pkg.install.virtualbox'
 include_recipe 'littleobi::pkg.install.hashicrop'
 
 include_recipe 'littleobi-kube::default'

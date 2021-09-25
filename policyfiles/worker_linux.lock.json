@@ -1,5 +1,5 @@
 {
-  "revision_id": "497392660eed791791cd5d9485f0aba9571e68fed5efd152c23e0ef5e83eec4d",
+  "revision_id": "52a6eb4c6709f2e0ed1c642778f6555741731ab887e1049fc1d80f272e6b3038",
   "name": "worker_linux",
   "run_list": [
     "recipe[os-hardening::default]",
@@ -33,14 +33,14 @@
     },
     "littleobi": {
       "version": "0.1.0",
-      "identifier": "f3cd01f53c0ffe2512d3dfae8109b6ae172bd185",
-      "dotted_decimal_identifier": "68623827633704958.10435275338449161.200858829312389",
+      "identifier": "153762f1a26c3e51b602bd95e9e0cfcceb9a8de8",
+      "dotted_decimal_identifier": "5971872611200062.22999596000471520.228479033052648",
       "source": "../cookbooks/littleobi",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "70bd798797da839d4096a2e6d716cc086cbd310b",
+        "revision": "cab1b85702716cbed1e31b85269287abffc4dc38",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -60,7 +60,7 @@
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "70bd798797da839d4096a2e6d716cc086cbd310b",
+        "revision": "cab1b85702716cbed1e31b85269287abffc4dc38",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -142,7 +142,146 @@
 
   },
   "override_attributes": {
-
+    "workstation": {
+      "littleobi": {
+        "Virtualbox": {
+          "enabled": false
+        },
+        "virt-tools": {
+          "enabled": true
+        },
+        "gns3": {
+          "enabled": true
+        },
+        "vscode": {
+          "enabled": true
+        },
+        "cockpit": {
+          "enabled": false
+        },
+        "hashicrop": {
+          "enabled": true
+        },
+        "terraform": {
+          "install": true
+        },
+        "packer": {
+          "install": true
+        },
+        "vagrant": {
+          "install": true
+        },
+        "awscli": {
+          "enabled": true
+        },
+        "azurecli": {
+          "enabled": true
+        },
+        "powershell": {
+          "enabled": true
+        },
+        "iscsi-tools": {
+          "enabled": true
+        },
+        "haproxy": {
+          "enabled": false
+        },
+        "glusterfs": {
+          "enabled": true
+        },
+        "heketi": {
+          "enabled": true
+        },
+        "selinux-tools": {
+          "enabled": true
+        },
+        "btrfs": {
+          "enabled": false
+        },
+        "ntfs": {
+          "enabled": false
+        },
+        "lvm2": {
+          "enabled": true
+        },
+        "exfat": {
+          "enabled": true
+        },
+        "ad-tools": {
+          "enabled": true
+        }
+      }
+    },
+    "server": {
+      "littleobi": {
+        "Virtualbox": {
+          "enabled": false
+        },
+        "virt-tools": {
+          "enabled": true
+        },
+        "gns3": {
+          "enabled": true
+        },
+        "vscode": {
+          "enabled": false
+        },
+        "cockpit": {
+          "enabled": false
+        },
+        "hashicrop": {
+          "enabled": false
+        },
+        "terraform": {
+          "install": false
+        },
+        "packer": {
+          "install": false
+        },
+        "vagrant": {
+          "install": false
+        },
+        "awscli": {
+          "enabled": false
+        },
+        "azurecli": {
+          "enabled": false
+        },
+        "powershell": {
+          "enabled": false
+        },
+        "iscsi-tools": {
+          "enabled": true
+        },
+        "haproxy": {
+          "enabled": false
+        },
+        "glusterfs": {
+          "enabled": true
+        },
+        "heketi": {
+          "enabled": true
+        },
+        "selinux-tools": {
+          "enabled": true
+        },
+        "btrfs": {
+          "enabled": false
+        },
+        "ntfs": {
+          "enabled": false
+        },
+        "lvm2": {
+          "enabled": true
+        },
+        "exfat": {
+          "enabled": true
+        },
+        "ad-tools": {
+          "enabled": true
+        }
+      }
+    }
   },
   "solution_dependencies": {
     "Policyfile": [
