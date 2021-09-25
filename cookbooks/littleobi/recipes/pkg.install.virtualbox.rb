@@ -5,14 +5,14 @@ def install_rhel_virtualbox()
     action :upgrade
   end
   yum_repository 'virtualbox' do
-    baseurl 'https://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo'
+    baseurl 'http://download.virtualbox.org/virtualbox/rpm/el/$releasever/$basearch'
     description     'This is repo for virtualbox'
     enabled         true
     gpgcheck        true
     gpgkey          'https://www.virtualbox.org/download/oracle_vbox.asc'
   end
   package 'epel-release'
-  include_recipe 'littleobi-base-linux::reinit.base'
+  include_recipe 'littleobi::reinit.base'
   dnf_package 'virtualization-tools' do
     action :install
     flush_cache    [ :after ]
@@ -96,7 +96,7 @@ if  node['littleobi']['Virtualbox']['enabled']
     
   end
   group 'vboxusers' do
-    members %w($USER administrator)
+    members %w(administrator)
     action :create
   end
 
