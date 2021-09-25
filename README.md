@@ -29,3 +29,13 @@ Roles provide logical grouping of cookbooks and other roles. A sample role can b
 ## Getting Started
 
 Now that you have the chef-repo ready to go, check out [Learn Chef](https://learn.chef.io/) to proceed with your workstation setup. If you have any questions about Chef you can always ask [our support team](https://www.chef.io/support/) for a helping hand.
+
+
+## Instruction for who uses cookbook when creating their own infrastructure
+
+There are few requirments to be taken care of before bootstrapping any node.
+
+1. There should be an administrator account and this should be in wheel group.
+2. There should be sudo access through ssh, ssh-server should be on.
+3. '''$/data/docker/images''' should exist and there should be serperate LV volume with VDO at the base.
+4.  '''/home/administrator/priv''' and  '''/priv''' should exist and there should be serperate LV volume with LUKS at the base.
