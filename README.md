@@ -60,7 +60,8 @@ There are post task for heketi-cli that you can do.
 
 ```kubeadm join [ip]:6443 --token [your-token] --discovery-token-ca-cert-hash sha256:[hash]```
 
-                        OR
+OR
+
 you can create new one 
 
 `sudo kubeadm token create --print-join-command > joinkubecluster.sh`
