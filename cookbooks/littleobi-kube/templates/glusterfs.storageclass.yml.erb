@@ -1,0 +1,12 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: slow-cs
+provisioner: kubernetes.io/glusterfs
+parameters:
+  resturl: "http://192.168.4.3:8080"
+  clusterid: "630372ccdc720a92c681fb928f27b53f"
+  
+  restuser: "admin"
+  restuserkey: "qwertyuiop"
+  volumetype: "none"

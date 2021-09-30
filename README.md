@@ -48,8 +48,11 @@ There are post task for heketi-cli that you can do.
 
 1. copy ssh-ids to all the server to designated accounts.
 2. change default password in 'vi /data/heketi/config/heketi.json', this should be 23rd and 28th line.
-2. `docker run -d -p 8080:8080 -v /data/heketi/config:/etc/heketi -v /data/heketi/db:/var/lib/heketi heketi/heketi` for running heketi-cli server after chef-client has ran in primary_server 
-
+3. `docker run -d -p 8080:8080--name  heketi-0   -e HEKETI_CLI_USER=admin -e HEKETI_CLI_KEY=qwertyuiop -v /data/heketi/config:/etc/heketi -v /data/heketi/db:/var/lib/heketi heketi/heketi` for running heketi-cli server after chef-client has ran in primary_server 
+4. Run 'docker -it heketi-3 bash'
+5. Add nodes to cluster(you have to create one first) make sure use
+`heketi-cli node add --zone 1 --cluster <clutser-id> --management-hostname <hostname> --storage-host-name  <ip-address>`
+6. Add devices ` heketi-cli device add --name /dev/nvme* --node <node-id>`
 ## Instruction for bootstraping nodes 
 
 1. Find the join commands in `/data/share/private`. 
