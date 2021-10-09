@@ -12,7 +12,7 @@ when 'centos'
         owner 'root'
         group 'docker'
         
-        mode '0755'
+        mode '0640'
     end
   
     dnf_package 'zram-generator-defaults' do 
@@ -29,7 +29,7 @@ when 'centos'
         source 'daemon.json.erb'
         owner 'root'
         group 'docker'
-        mode '0755'
+        mode '0640'
         action :create
     end
 
@@ -63,7 +63,7 @@ when 'centos'
     directory '/root/.kube/' do
         owner 'root'
         group 'root'
-        mode '0755'
+        mode '0640'
         subscribes  :create , 'bash[Init as master]', :immediately
     end
 
@@ -73,10 +73,24 @@ when 'centos'
         source "file:///etc/kubernetes/admin.conf"
         owner 'root'
         group 'root'
-        mode 0755
+        mode '0640'
         subscribes  :create , 'directory [/root/.kube/]', :immediately
     end
 
+    directory '/root/.kube/' do
+        owner 'administrator'
+        group 'kube'
+        mode '0660'
+    end
+
+
+    remote_file "Copy kube config file" do 
+        path "/root/.kube/config" 
+        source "file:///etc/kubernetes/admin.conf"
+        owner 'root'
+        group 'kube'
+        mode '0640'
+    end
 
     bash 'pod net init' do
         user 'root'
@@ -119,7 +133,7 @@ when 'fedora'
         source 'daemon.json.erb'
         owner 'root'
         group 'docker'
-        mode '0755'
+        mode '0640'
         action :create
     end
 
@@ -152,7 +166,7 @@ when 'fedora'
     directory '/root/.kube/' do
         owner 'root'
         group 'root'
-        mode '0755'
+        mode '0640'
         subscribes  :create , 'bash[Init as master]', :immediately
     end
 
@@ -162,7 +176,7 @@ when 'fedora'
         source "file:///etc/kubernetes/admin.conf"
         owner 'root'
         group 'root'
-        mode 0755
+        mode '0640'
         subscribes  :create , 'directory [/root/.kube/]', :immediately
     end
 

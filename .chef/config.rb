@@ -7,3 +7,5 @@ node_name                "tarak311"
 client_key               "#{current_dir}/tarak311.pem"
 chef_server_url          "https://api.chef.io/organizations/litleobi"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+knife[:vault_mode] = 'client'
+knife[:vault_admins] = [ 'tarak311' ]

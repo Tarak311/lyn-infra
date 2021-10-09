@@ -1,9 +1,10 @@
 {
-  "revision_id": "209c9393ca1589e3bff76bebe14c0c765c44b90b31e0ede669f30815aa54de1b",
+  "revision_id": "40a2935abdbf8ad72cce30ce12c0f9e7289eeb007abdcd5d1a4c762f4890cb7c",
   "name": "worker_linux",
   "run_list": [
     "recipe[os-hardening::default]",
-    "recipe[littleobi::default]"
+    "recipe[littleobi::default]",
+    "recipe[littleobi-kube::init.worker.kube]"
   ],
   "included_policy_locks": [
 
@@ -21,26 +22,26 @@
       }
     },
     "line": {
-      "version": "4.4.1",
-      "identifier": "5cd87cba832a3429871aa5f58781266de3f77faf",
-      "dotted_decimal_identifier": "26133728074082868.11689022568368001.42253417938863",
-      "cache_key": "line-4.4.1-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.4.1/download",
+      "version": "4.4.2",
+      "identifier": "29d07ee7f5a8fa5754c630d0f74b0b225804d796",
+      "dotted_decimal_identifier": "11769717521230074.24581533173086027.12242133505942",
+      "cache_key": "line-4.4.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.4.2/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.4.1/download",
-        "version": "4.4.1"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/line/versions/4.4.2/download",
+        "version": "4.4.2"
       }
     },
     "littleobi": {
       "version": "0.1.0",
-      "identifier": "153762f1a26c3e51b602bd95e9e0cfcceb9a8de8",
-      "dotted_decimal_identifier": "5971872611200062.22999596000471520.228479033052648",
+      "identifier": "e4a067834ee96fb4cd90730c5e17949b4ec3e5c4",
+      "dotted_decimal_identifier": "64352661135092079.50891516097093143.163394762302916",
       "source": "../cookbooks/littleobi",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "9c60a1b20fd0902fef7b7677e303b16c01406786",
+        "revision": "4716e8f3e127ed43fc853e8493d4d2ef7cc0e66e",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -53,14 +54,14 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "7d521fc8dd8f1dc30d33df81dedbe244c7a7d0dd",
-      "dotted_decimal_identifier": "35274668556259101.54902136902901467.248785035317469",
+      "identifier": "4527b04fe7dd88bdc7960e746f8196ce180ce198",
+      "dotted_decimal_identifier": "19465411601358216.53418217899847553.165811910926744",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "9c60a1b20fd0902fef7b7677e303b16c01406786",
+        "revision": "4716e8f3e127ed43fc853e8493d4d2ef7cc0e66e",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -157,7 +158,7 @@
           "enabled": true
         },
         "cockpit": {
-          "enabled": false
+          "enabled": true
         },
         "hashicrop": {
           "enabled": true
@@ -184,7 +185,7 @@
           "enabled": true
         },
         "haproxy": {
-          "enabled": false
+          "enabled": true
         },
         "glusterfs": {
           "enabled": true
@@ -208,6 +209,12 @@
           "enabled": true
         },
         "ad-tools": {
+          "enabled": true
+        },
+        "tpm-tools": {
+          "enabled": true
+        },
+        "pwgen-tools": {
           "enabled": true
         }
       }
@@ -291,7 +298,7 @@
       ],
       [
         "line",
-        "= 4.4.1"
+        "= 4.4.2"
       ],
       [
         "littleobi",
@@ -330,7 +337,7 @@
       "firewalld (1.2.1)": [
 
       ],
-      "line (4.4.1)": [
+      "line (4.4.2)": [
 
       ],
       "littleobi (0.1.0)": [

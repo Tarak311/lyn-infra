@@ -10,7 +10,7 @@ name 'worker_linux'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list 'os-hardening::default', 'littleobi::default'
+run_list  'os-hardening::default', 'littleobi::default', 'littleobi-kube::init.worker.kube'
 
 # Specify a custom source for a single cookbook:
 cookbook 'littleobi', path: '../cookbooks/littleobi/'
@@ -25,7 +25,7 @@ override['workstation']['littleobi']['Virtualbox']['enabled'] = false
 override['workstation']['littleobi']['virt-tools']['enabled'] = true
 override['workstation']['littleobi']['gns3']['enabled'] = true
 override['workstation']['littleobi']['vscode']['enabled'] = true
-override['workstation']['littleobi']['cockpit']['enabled'] = false
+override['workstation']['littleobi']['cockpit']['enabled'] = true
 override['workstation']['littleobi']['hashicrop']['enabled'] = true
 override['workstation']['littleobi']['terraform']['install'] = true
 override['workstation']['littleobi']['packer']['install'] =  true
@@ -34,7 +34,7 @@ override['workstation']['littleobi']['awscli']['enabled'] = true
 override['workstation']['littleobi']['azurecli']['enabled'] = true
 override['workstation']['littleobi']['powershell']['enabled'] = true
 override['workstation']['littleobi']['iscsi-tools']['enabled'] = true
-override['workstation']['littleobi']['haproxy']['enabled'] = false
+override['workstation']['littleobi']['haproxy']['enabled'] = true
 override['workstation']['littleobi']['glusterfs']['enabled'] = true
 override['workstation']['littleobi']['heketi']['enabled'] = true
 override['workstation']['littleobi']['selinux-tools']['enabled'] = true
@@ -43,6 +43,9 @@ override['workstation']['littleobi']['ntfs']['enabled'] = false
 override['workstation']['littleobi']['lvm2']['enabled'] = true
 override['workstation']['littleobi']['exfat']['enabled'] = true
 override['workstation']['littleobi']['ad-tools']['enabled'] = true    
+override['workstation']['littleobi']['tpm-tools']['enabled'] = true
+override['workstation']['littleobi']['pwgen-tools']['enabled'] = true
+
 
 override['server']['littleobi']['Virtualbox']['enabled'] = false
 override['server']['littleobi']['virt-tools']['enabled'] = true

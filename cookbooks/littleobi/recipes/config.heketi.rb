@@ -3,7 +3,7 @@ if node['littleobi']['heketi']['enabled']
     directory '/home/administrator/priv/heketi' do
         owner 'root'
         group 'root'
-        mode '0755'
+        mode '0640'
         action :create
     end
 
@@ -19,14 +19,14 @@ if node['littleobi']['heketi']['enabled']
     directory '/data/share/' do
         owner 1000
         group 1000
-        mode '0755'
+        mode '0640'
         action :create
     end
 
     directory '/data/share/pubkeys' do
         owner 1000
         group 1000
-        mode '0755'
+        mode '0640'
         action :create
     end
 
@@ -41,7 +41,7 @@ if node['littleobi']['heketi']['enabled']
     directory '/data/heketi/' do
         owner 1000
         group 1000
-        mode '0755'
+        mode '0640'
         action :create
     end
 
@@ -49,7 +49,7 @@ if node['littleobi']['heketi']['enabled']
     directory '/data/heketi/config' do
         owner 1000
         group 1000
-        mode '0755'
+        mode '0640'
         action :create
     end
 
@@ -57,7 +57,7 @@ if node['littleobi']['heketi']['enabled']
     directory '/data/heketi/db' do
         owner 1000
         group 1000
-        mode '0755'
+        mode '0640'
         action :create
     end
 
@@ -65,7 +65,7 @@ if node['littleobi']['heketi']['enabled']
         source 'heketi.json.erb'
         owner 1000
         group 1000
-        mode '0755'
+        mode '0640'
         action :create
     end
 

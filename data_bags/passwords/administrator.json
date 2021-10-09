@@ -1,0 +1,17 @@
+{
+  "id": "administrator",
+  "UserName": {
+    "encrypted_data": "VetOCjK1MITC+8ZUWRd9QZPlk8oWkLaqd0U8ilcXnnA=\n",
+    "iv": "Ah3cJLn1RMnzvcRN\n",
+    "auth_tag": "krFeQGvDJefdcobT1niLFA==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  },
+  "Password": {
+    "encrypted_data": "zKwmR/ygKMqlxwsx/c9FR20QqXYvbaybstalAnk=\n",
+    "iv": "tLzUpuh3V2oyv1jV\n",
+    "auth_tag": "RBeRu0uYXmKBIio2QH0AFQ==\n",
+    "version": 3,
+    "cipher": "aes-256-gcm"
+  }
+}

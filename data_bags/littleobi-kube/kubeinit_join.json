@@ -1,4 +1,0 @@
-{
-  "id": "kubeinit_join",
-  "cmd": "kubeadm join 192.168.4.164:6443 --token zp5uej.fqvmkr6f6q5fgbt4 --discovery-token-ca-cert-hash sha256:3f52f4ade8e4878b4383a3cef8de8c8eaced9cac2566e7e25b564361d2429aa2"
-}

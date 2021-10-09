@@ -49,7 +49,9 @@ default['littleobi']['lvm2']['enabled'] = true
 default['littleobi']['exfat']['enabled'] = true
 
 default['littleobi']['ad-tools']['enabled'] = false
+default['littleobi']['tpm-tools']['enabled'] = false
+
+default['littleobi']['pwgen-tools']['enabled'] = false
 
 
-
-
+default['littleobi']['tpmv2'] = true

@@ -17,8 +17,16 @@ template '/etc/sysctl.d/k8s.conf' do
   source 'k8s.conf.erb'
   owner  'root'
   group  'root'
-  mode   '0644'
+  mode   '0640'
 end 
-    
+
+
+bash 'reseting systemctl ' do
+  user 'root'
+  cwd '/tmp/'
+  code <<-EOH
+  sysctl --system
+  EOH
+end
 
 # writefun for sysctl --system

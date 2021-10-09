@@ -48,4 +48,10 @@ if  node['littleobi']['kubeadm']['enabled']
       action :run
     end
   end
+
+  group 'kube' do
+    append true
+    members %w(administrator)
+    action :create
+  end
 end
