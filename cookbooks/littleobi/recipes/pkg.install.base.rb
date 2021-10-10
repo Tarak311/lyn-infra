@@ -1,6 +1,6 @@
 case node['platform']
 when 'centos'
-
+  
   dnf_package 'plugin tools' do
     flush_cache [ :after ] 
     package_name   %w(dnf-plugins-core )
@@ -101,11 +101,5 @@ when 'fedora'
   
   if node['littleobi']['exfat']['enabled']
   end
-  template '/root/.tmux.conf' do
-    source '.tmux.conf.erb'
-    owner  'root'
-    group  'root'
-    mode   '0666'
-  end 
-
+  
 end

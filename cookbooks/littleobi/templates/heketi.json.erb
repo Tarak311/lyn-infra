@@ -20,12 +20,12 @@
       "_admin": "Admin has access to all APIs",
       "admin": {
         "_key_comment": "Set the admin key in the next line",
-        "key": "qwertyuiop"
+        "key": <%= @admin_password %> 
       },
       "_user": "User only has access to /volumes endpoint",
       "user": {
         "_key_comment": "Set the user key in the next line",
-        "key": "qwertyuiop"
+        "key": <%= @user_password %> 
       }
     },
   
@@ -51,7 +51,7 @@
       "_sshexec_comment": "SSH username and private key file information",
       "sshexec": {
         "keyfile": "/etc/heketi/heketi.key",
-        "user": "root",
+        "user": "storageadm",
         "port": "22",
         "fstab": "/etc/fstab"
       },

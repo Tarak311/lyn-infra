@@ -1,7 +1,6 @@
 
-default['littleobi']['kubeadm']['enabled'] = false
-default['littleobi']['docker']['enabled'] = false
-default['littleobi']['role']['master'] = false
-default['littleobi']['role']['worker'] = false
+default['littleobi-kube']['kubeadm']['enabled'] = false
+default['littleobi-kube']['docker']['enabled'] = false
+
 
 

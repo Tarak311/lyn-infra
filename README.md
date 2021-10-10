@@ -75,7 +75,7 @@ cs_north - fast ssd  /usr - 10G /opt - 2G  /var- 10G  /home - 20G   / - 10G
 cs_south - slow hdd    /tmp   - 30G                         40G
 cs_north_vdo - docker_images                                30G
 cs_north_luks /priv - 2G  /home/user/.priv/  - 1G           10G
-cs_south_luks /data/priv                                    40G
+cs_south_luks /data/priv                                    20G
 
 /dev/sda8 - docker_data_south      cluster_south            40G
 /dev/nvmep1n8 docker_data_north    cluster_north            20G

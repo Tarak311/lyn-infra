@@ -6,6 +6,10 @@ if node['littleobi']['heketi']['enabled']
         action          :install # defaults to :install if not specified
       end 
     }
-
+  group 'heketi' do
+      append true
+      members %w(administrator storageadm)
+      action :create
+  end
 end
 

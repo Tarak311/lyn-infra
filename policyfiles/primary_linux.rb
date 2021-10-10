@@ -21,7 +21,8 @@ cookbook 'yum-centos', '~> 5.1.1', :supermarket
 cookbook 'yum', '~> 6.1.1', :supermarket
 cookbook 'littleobi', path: '../cookbooks/littleobi/'
 
-
+override['littleobi']['role']['primary'] = true
+override['littleobi']['role']['worker'] = false
 
 override['workstation']['littleobi']['Virtualbox']['enabled'] = false
 override['workstation']['littleobi']['virt-tools']['enabled'] = true

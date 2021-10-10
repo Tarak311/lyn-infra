@@ -20,6 +20,9 @@ cookbook 'os-hardening', '= 4.0.0', :supermarket
 cookbook 'yumgroup', '~> 0.6.0', :supermarket
 cookbook 'yum-centos', '~> 5.1.1', :supermarket
 cookbook 'yum', '~> 6.1.1', :supermarket
+override['littleobi']['role']['primary'] = false
+override['littleobi']['role']['worker'] = true
+
 
 override['workstation']['littleobi']['Virtualbox']['enabled'] = false
 override['workstation']['littleobi']['virt-tools']['enabled'] = true

@@ -7,6 +7,8 @@
 
 include_recipe 'yum-centos::default'
 include_recipe 'yum::default'
+
+
 include_recipe 'littleobi::config.network'
 include_recipe 'littleobi::reinit.base'
 include_recipe 'littleobi::pkg.install.base'
@@ -28,3 +30,6 @@ include_recipe 'littleobi::pkg.install.realmd'
 include_recipe 'littleobi::pkg.install.haproxy'
 include_recipe 'littleobi::reinit.base'
 include_recipe 'littleobi::pkg.install.tpm'
+include_recipe 'littleobi::config.tmux'
+
+
