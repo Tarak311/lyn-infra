@@ -18,7 +18,7 @@ override['littleobi']['kubeadm']['enabled'] = true
 
 # Packages Installed
 
-default['littleobi']['nilfguard']['ip'] = "192.168.4.251"
+default['littleobi']['dragonscale']['ip'] = "192.168.4.251"
 default['littleobi']['dragonden']['ip'] = "192.168.4.245"
 default['littleobi']['dragonvein']['ip'] = "192.168.4.3"
 default['littleobi']['dragowitch']['ip'] = "192.168.4.173"
@@ -66,24 +66,22 @@ default['littleobi']['tpmv2'] = true
 
 default['littleobi']['role']['primary'] = false
 default['littleobi']['role']['worker'] = false
-default['littleobi']['node']['storage_cfg']['priv_root'] = "/priv/"
-default['littleobi']['node']['storage_cfg']['priv_heketi_keys_certs'] = "/priv/heketi"
 default['littleobi']['node']['storage_cfg']['priv_administrator'] = "/home/administrator/.priv"
-default['littleobi']['node']['storage_cfg']['data_share'] = "/data/share"
-default['littleobi']['node']['storage_cfg']['data_priv'] = "/data/priv"
-default['littleobi']['node']['storage_cfg']['data_priv_heketi'] = "/data/priv/heketi"
+default['littleobi']['node']['storage_cfg']['data_bulk'] = "/data/store" #Storage for Bulk Data this should be HDD only 
+## NOTE : NVME is only used when needed there won't be bulk prov for it.
+
+default['littleobi']['node']['storage_cfg']['data_share'] = "/data/share" #Storage for Bulk Shared Data this should be HDD only
+default['littleobi']['node']['storage_cfg']['data_priv'] = "/data/priv" #Storage for Bulk Protectd Data this should be HDD only
+
+default['littleobi']['node']['storage_cfg']['data_share'] = "/data/share/priv" # backed by iscsi with LUKS
+
+# heketi cli server should be only one in node and the storage should be in sync with rscync from /data/share/priv/heketi to data/
+default['littleobi']['node']['storage_cfg']['data_priv_heketi'] = "/data/priv/heketi" # This should be SSD with Encrytption 
 default['littleobi']['node']['storage_cfg']['data_priv_heketi_config'] = "/data/priv/heketi/cfg"
 default['littleobi']['node']['storage_cfg']['data_priv_heketi_db'] ="/data/priv/heketi/db"
 
-
-default['littleobi']['node']['storage_cfg']['disk']['kube_data_hdd_blk'] = "/dev/sda8" #50G
-default['littleobi']['node']['storage_cfg']['disk']['kube_data_ssd_blk'] = "/dev/nvme0n1p4" #20G 
-default['littleobi']['node']['storage_cfg']['disk']['kube_data_ssd_luks'] = "/dev/nvme0n1p5" #10G
-default['littleobi']['node']['storage_cfg']['disk']['kube_data_hdd_luks'] = "/dev/sda9" #30G
+default['littleobi']['node']['storage_cfg']['docker_images'] = "/data/docker" # this is backed by LVM north 30 GiB
 
 
-default['littleobi']['node']['storage_cfg']['disk']['data'] = "/dev/sda10" # 40G cs_node_data_south /dev/nvme0n1p7
-
-default['littleobi']['node']['storage_cfg']['disk']['data_ssd'] = "/dev/nvme0n1p6" #30G for cs_node_data_north if no ssd /dev/sda11
 
 
