@@ -10,7 +10,7 @@ include_recipe 'yum::default'
 include_recipe 'littleobi::config.bento'
 include_recipe 'littleobi::config.network'
 
-include_recipe 'littleobi-kube::default'
+
 include_recipe 'littleobi::config.storage'
 include_recipe 'littleobi::reinit.base'
 include_recipe 'littleobi::pkg.install.base'
@@ -22,7 +22,7 @@ include_recipe 'littleobi::pkg.install.virtualization'
 include_recipe 'littleobi::reinit.base'
 include_recipe 'littleobi::pkg.install.vscode'
 include_recipe 'littleobi::pkg.install.hashicrop'
-
+include_recipe 'littleobi-kube::default'
 include_recipe 'littleobi::pkg.install.gns3'
 include_recipe 'littleobi::pkg.install.glusterfs'
 include_recipe 'littleobi::config.glusterfs'

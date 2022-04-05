@@ -101,13 +101,7 @@ if node['littleobi']['heketi']['enabled']
             action :create
         end
 
-        template '/priv/lyn_infra_secret_key.pem' do
-            source 'lyn_infra_secret_key.pem.erb'
-            owner 1000
-            group 1000
-            mode '0660'
-            action :create
-        end
+        
         #heketi_secret = Chef::EncryptedDataBagItem.load("password", "heketi",IO.read("/priv/lyn_infra_secret_key.pem"))
 
         template '/data/priv/heketi/config/heketi.json' do

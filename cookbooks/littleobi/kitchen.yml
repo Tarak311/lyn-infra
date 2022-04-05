@@ -1,6 +1,12 @@
 ---
 driver:
   name: vagrant
+  synced_folders:
+   - ['.priv', '/tmp/priv']
+  customize:
+        memory: 2048
+        cpus: 2
+    
 
 provisioner:
   name: chef_zero
