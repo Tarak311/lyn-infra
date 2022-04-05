@@ -1,4 +1,4 @@
-
+## BUGS FOUNDS  LIBPCAP DEVEL IS NOT GETTING INSTALL AS POWERTOOL REPO IN NOT ENABLED, GIT PROTO IS outdated    
 if  node['littleobi']['gns3']['enabled'] # This variable is set in attributes file (default is false) Set true to enable this package.
     if (node['platform'] =="centos" || node['platform'] =="fedora")
         include_recipe 'littleobi::reinit.base'

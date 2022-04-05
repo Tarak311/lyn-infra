@@ -6,6 +6,7 @@ default['yum']['extras']['make_cache'] = true
 default['yum']['extras']['managed'] = true
 default['yum']['extras']['gpgcheck'] = true
 default['yum']['extras']['gpgkey'] =
+
   if node['platform_version'].to_i >= 8
     'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial'
   else

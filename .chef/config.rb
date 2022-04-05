@@ -8,4 +8,4 @@ client_key               "#{current_dir}/tarak311.pem"
 chef_server_url          "https://api.chef.io/organizations/litleobi"
 cookbook_path            ["#{current_dir}/../cookbooks"]
 secret                   "Lalohel311"
-editor                   "C:/Users/tarak/AppData/Local/Programs/Microsoft VS Code/code"
+knife[:editor] = "notepad"

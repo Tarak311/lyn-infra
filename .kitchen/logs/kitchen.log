@@ -1,3 +1,0 @@
-I, [2021-09-02T23:35:08.737381 #11736]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.0.0)
-I, [2021-09-02T23:35:10.424048 #11736]  INFO -- Kitchen: -----> Converging <base-centos-8>...
-I, [2021-09-02T23:35:36.961553 #11736]  INFO -- Kitchen: -----> Test Kitchen is finished. (0m28.22s)

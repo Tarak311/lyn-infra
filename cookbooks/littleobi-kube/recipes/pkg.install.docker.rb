@@ -23,7 +23,7 @@ if  node['littleobi']['docker']['enabled']
       gpgkey          'https://download.docker.com/linux/centos/gpg'
     end
   
-   include_recipe 'littleobi-kube::reinit.base'
+  # include_recipe 'littleobi-kube::reinit.base'
   
   
     
@@ -33,18 +33,10 @@ if  node['littleobi']['docker']['enabled']
       action         :remove # defaults to :install if not specified
     end
 
-    ruby 'Clean rpm/yum/dnf chache' do
-      interpreter 'bash' 
-      code <<-EOH
-        dnf clean all
-        yum update -y --allowerasing 
-      EOH
-      not_if { ::File.exist?('/tmp/kubeinit.log') }
-    end
-    
+  
     bash 'docker_inst' do
       code <<-EOH
-        yum install -y docker-ce --allowerasing 
+        yum install -y docker-ce
       EOH
       action :run
     end

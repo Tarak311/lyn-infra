@@ -1,8 +1,5 @@
 
-override['yum']['powertools']['enabled'] = true
-default['yum']['main']['exclude'] = nil
-node.override['yum']['powertools']['managed'] = true
-node.override['yum']['powertools']['enabled'] = true
+
 
 #enable vfat for UEFI systems
 override['os-hardening']['security']['kernel']['disable_filesystems'] = %w(cramfs freevxfs jffs2 hfs hfsplus squashfs udf )
@@ -17,7 +14,7 @@ override['littleobi']['docker']['enabled'] = true
 override['littleobi']['kubeadm']['enabled'] = true
 
 # Packages Installed
-
+override['littleobi']['role']['primary'] = true 
 default['littleobi']['dragonscale']['ip'] = "192.168.4.251"
 default['littleobi']['dragonden']['ip'] = "192.168.4.245"
 default['littleobi']['dragonvein']['ip'] = "192.168.4.3"
@@ -27,24 +24,24 @@ default['littleobi']['adds']['ip'] = "192.168.4.10"
 default['littleobi']['subca']['ip'] = "192.168.4.20"
 
 default['littleobi']['Virtualbox']['enabled'] = false
-default['littleobi']['virt-tools']['enabled'] = false
+default['littleobi']['virt-tools']['enabled'] = true    
 
 default['littleobi']['gns3']['enabled'] = false
 
-default['littleobi']['vscode']['enabled'] = false
-default['littleobi']['cockpit']['enabled'] = false
+default['littleobi']['vscode']['enabled'] = true
+default['littleobi']['cockpit']['enabled'] = true
 default['littleobi']['hashicrop']['enabled'] = false
 
-default['littleobi']['terraform']['install'] = false
-default['littleobi']['packer']['install'] =  false
-default['littleobi']['vagrant']['install'] = false
+default['littleobi']['terraform']['install'] = true
+default['littleobi']['packer']['install'] =  true
+default['littleobi']['vagrant']['install'] = true
 
-default['littleobi']['awscli']['enabled'] = false
-default['littleobi']['azurecli']['enabled'] = false
-default['littleobi']['powershell']['enabled'] = false
+default['littleobi']['awscli']['enabled'] = true
+default['littleobi']['azurecli']['enabled'] = true
+default['littleobi']['powershell']['enabled'] = true
 
-default['littleobi']['iscsi-tools']['enabled'] = false
-default['littleobi']['haproxy']['enabled'] = false
+default['littleobi']['iscsi-tools']['enabled'] = true
+default['littleobi']['haproxy']['enabled'] = true
 default['littleobi']['glusterfs']['enabled'] = true
 default['littleobi']['heketi']['enabled'] = true
 
@@ -56,15 +53,15 @@ default['littleobi']['ntfs']['enabled'] = false
 default['littleobi']['lvm2']['enabled'] = true
 default['littleobi']['exfat']['enabled'] = true
 
-default['littleobi']['ad-tools']['enabled'] = false
-default['littleobi']['tpm-tools']['enabled'] = false
+default['littleobi']['ad-tools']['enabled'] = true
+default['littleobi']['tpm-tools']['enabled'] = true
 
-default['littleobi']['pwgen-tools']['enabled'] = false
+default['littleobi']['pwgen-tools']['enabled'] = true
 
 
 default['littleobi']['tpmv2'] = true
 
-default['littleobi']['role']['primary'] = false
+default['littleobi']['role']['primary'] = true
 default['littleobi']['role']['worker'] = false
 default['littleobi']['node']['storage_cfg']['priv_administrator'] = "/home/administrator/.priv"
 default['littleobi']['node']['storage_cfg']['data_bulk'] = "/data/store" #Storage for Bulk Data this should be HDD only 

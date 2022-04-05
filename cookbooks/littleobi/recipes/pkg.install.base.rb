@@ -30,7 +30,7 @@ when 'centos'
     flush_cache [ :after ]
     package_name   %w(python3 make patch gcc )
     action         :install # defaults to :install if not specified
-    end
+  end
 
   dnf_package 'core-tools' do
     flush_cache [ :after ]
@@ -85,7 +85,7 @@ when 'fedora'
     flush_cache [ :after ]
     package_name   %w(python3 make patch gcc)
     action         :install # defaults to :install if not specified
-    end
+  end
 
   dnf_package 'core-tools' do
     flush_cache [ :after ]
