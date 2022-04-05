@@ -10,7 +10,7 @@ name 'primary_server'
 default_source :supermarket
 
 # run_list: chef-client will run these recipes in the order specified.
-run_list  'os-hardening::default', 'littleobi::default', 'littleobi-kube::init.master.kube' , 'littleobi::config.heketi.rb'
+run_list  'os-hardening::default', 'littleobi::default', 'littleobi-kube::init.master.kube' , 'littleobi::config.heketi'
 
 # Specify a custom source for a single cookbook:
 cookbook 'littleobi-kube','= 0.0.1', path: '../cookbooks/littleobi-kube/'
@@ -19,7 +19,7 @@ cookbook 'os-hardening', '= 4.0.0', :supermarket
 cookbook 'yumgroup', '~> 0.6.0', :supermarket
 cookbook 'yum-centos', '~> 5.1.1', :supermarket
 cookbook 'yum', '~> 6.1.1', :supermarket
-cookbook 'littleobi', path: '../cookbooks/littleobi/'
+cookbook 'littleobi','= 0.1.0', path: '../cookbooks/littleobi/'
 
 override['littleobi']['role']['primary'] = true
 override['littleobi']['role']['worker'] = false
