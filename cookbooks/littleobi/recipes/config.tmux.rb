@@ -8,8 +8,8 @@ template '/root/.tmux.conf' do
   end 
 
 directory '/home/administrator' do
-  owner 'root'
-  group 'root'
+  owner 'administrator'
+  group 'administrator'
   mode '0755'
   action :create
 end

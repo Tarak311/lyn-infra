@@ -1,5 +1,5 @@
 {
-  "revision_id": "6abaebd948cc028c46513f0844c31156268a3cc7473ac3b14a6d19622527b32e",
+  "revision_id": "3cba58804be8778eeec5878247d05def6593cb38bca68a1d9b3e2f880d118a1d",
   "name": "primary_server",
   "run_list": [
     "recipe[os-hardening::default]",
@@ -35,14 +35,14 @@
     },
     "littleobi": {
       "version": "0.1.0",
-      "identifier": "1a3b2036d07bf3fbee01a55bcc04cff457ec0444",
-      "dotted_decimal_identifier": "7383358939102195.70911909991009284.228648354055236",
+      "identifier": "c9317d4b4289d3c516949c92843e647fc18b119c",
+      "dotted_decimal_identifier": "56630884522166739.55475397949817918.110499870740892",
       "source": "../cookbooks/littleobi",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "41e723a8aed569a659d41024cee4dea6d14ce7d3",
+        "revision": "558e0a549647c9e833a81fdb0ba19a5727fae64d",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -55,14 +55,14 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "055a92d0e600db61ab80a46b1f6e026526e05f5b",
-      "dotted_decimal_identifier": "1506961500012763.27491641743581038.2633467191131",
+      "identifier": "c42801b171a623d732d06fdd311ce762371020a4",
+      "dotted_decimal_identifier": "55213083172382243.60572990804144412.254409016615076",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "41e723a8aed569a659d41024cee4dea6d14ce7d3",
+        "revision": "558e0a549647c9e833a81fdb0ba19a5727fae64d",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -118,14 +118,14 @@
       }
     },
     "yum-centos": {
-      "version": "5.1.2",
-      "identifier": "693e49317e790e28e1bec37e9b103a90914f654c",
-      "dotted_decimal_identifier": "29623356638525710.11507208508316432.64392587601228",
-      "cache_key": "yum-centos-5.1.2-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-centos/versions/5.1.2/download",
+      "version": "5.2.0",
+      "identifier": "cac5be65148476f263acb00d15cbae2540306a3b",
+      "dotted_decimal_identifier": "57075366825854070.68226537703151051.191475013937723",
+      "cache_key": "yum-centos-5.2.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-centos/versions/5.2.0/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-centos/versions/5.1.2/download",
-        "version": "5.1.2"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-centos/versions/5.2.0/download",
+        "version": "5.2.0"
       }
     },
     "yumgroup": {
@@ -327,7 +327,7 @@
       ],
       [
         "yum-centos",
-        "= 5.1.2"
+        "= 5.2.0"
       ],
       [
         "yumgroup",
@@ -356,10 +356,6 @@
         ],
         [
           "firewalld",
-          ">= 0.0.0"
-        ],
-        [
-          "yum-centos",
           ">= 0.0.0"
         ],
         [
@@ -413,7 +409,7 @@
       "yum (6.1.1)": [
 
       ],
-      "yum-centos (5.1.2)": [
+      "yum-centos (5.2.0)": [
 
       ],
       "yumgroup (0.6.0)": [

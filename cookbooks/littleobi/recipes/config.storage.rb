@@ -3,33 +3,33 @@
 
 directory '/containers' do
         owner 'root'
-        group 'administrator'
-        mode '0755'
+        group 'root'
+        mode '0750'
         action :create
 end
 directory '/containers/docker' do
         owner 'root'
-        group 'administrator'
-        mode '0755'
+        group 'root'
+        mode '0750'
         action :create
 end 
 directory '/containers/docker/images' do
         owner 'root'
-        group 'administrator'
-        mode '0755'
+        group 'root'
+        mode '0750'
         action :create
 end
 directory '/data' do
         owner 'root'
-        group 'administrator'
-        mode '0755'
+        group 'root'
+        mode '0750'
         action :create
 end
 
 directory '/data/docker ' do
         owner 'root'
-        group 'administrator'
-        mode '0755'
+        group 'root'
+        mode '0750'
         action :create
 end
  

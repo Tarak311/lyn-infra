@@ -14,24 +14,6 @@ template '/etc/docker/daemon.json' do
     action :create
 end
 
-directory '/data' do
-    owner 'root'
-    group 'docker'
-    mode '0640'
-end
-
-
-directory '/data/docker' do
-    owner 'root'
-    group 'docker'
-    mode '0640'
-end
-
-directory '/data/docker/images' do
-    owner 'root'
-    group 'docker'
-    mode '0640'
-end
 
 
 service 'docker' do

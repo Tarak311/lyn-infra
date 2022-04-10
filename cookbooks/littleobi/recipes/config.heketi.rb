@@ -10,7 +10,7 @@ if node['littleobi']['heketi']['enabled']
 
         directory '/priv/heketi' do
             owner 'root'
-            group 'heketi'
+            group 'root'
             mode '0640'
             action :create
         end
@@ -128,41 +128,28 @@ if node['littleobi']['heketi']['enabled']
 
     group 'disk' do
         append true
-        members %w(storageadm)
+        members %w(administrator)
         action :create
     end
 
     group 'gluster' do
         append true
-        members %w(storageadm)
+        members %w(administrator)
         action :create
     end
 
     group 'libstoragemgmt' do
         append true
-        members %w(storageadm)
+        members %w(administrator)
         action :create
     end
 
     group 'plugdev' do
         append true
-        members %w(storageadm)
+        members %w(administrator)
         action :create
     end
 
-    directory '/home/storageadm' do
-        owner 'storageadm'
-        group 'storageadm'
-        mode '0750'
-        action :create
-    end
-
-    directory '/home/storageadm/.ssh' do
-        owner 'storageadm'
-        group 'storageadm'
-        mode '0750'
-        action :create
-    end
     
     
 

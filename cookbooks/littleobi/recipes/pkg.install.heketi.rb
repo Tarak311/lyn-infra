@@ -8,7 +8,7 @@ if node['littleobi']['heketi']['enabled']
     }
   group 'heketi' do
       append true
-      members %w(administrator storageadm)
+      members %w(administrator)
       action :create
   end
 end

@@ -2,6 +2,15 @@ case node['platform']
 
 when 'centos'
   
+  ruby 'Correcting Repo' do
+    interpreter 'bash'
+    ignore_failure true
+    code <<-EOH
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+    
+    EOH
+  end
+
   ruby 'Clean rpm/yum/dnf chache' do
     interpreter 'bash' 
     code <<-EOH

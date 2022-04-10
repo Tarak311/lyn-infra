@@ -21,7 +21,7 @@ when 'centos'
 
     service 'swap-create@zram0' do
         pattern 'swap-create@zram0' 
-        subscribes  :stop , 'dnf_package[zram-generator-defaults], :immediately'
+        subscribes  :stop , 'dnf_package[zram-generator-defaults]', :immediately
     end
     
 

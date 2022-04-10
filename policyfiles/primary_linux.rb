@@ -16,8 +16,7 @@ run_list  'os-hardening::default', 'littleobi::default', 'littleobi-kube::init.m
 cookbook 'littleobi-kube','= 0.0.1', path: '../cookbooks/littleobi-kube/'
 cookbook 'selinux', '~> 3.1.1', :supermarket
 cookbook 'os-hardening', '= 4.0.0', :supermarket
-cookbook 'yumgroup', '~> 0.6.0', :supermarket
-cookbook 'yum-centos', '~> 5.1.1', :supermarket
+cookbook 'yumgroup', '~> 0.6.0', :supermarket   
 cookbook 'yum', '~> 6.1.1', :supermarket
 cookbook 'littleobi','= 0.1.0', path: '../cookbooks/littleobi/'
 

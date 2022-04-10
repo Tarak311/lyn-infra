@@ -30,7 +30,7 @@ default['littleobi']['gns3']['enabled'] = false
 
 default['littleobi']['vscode']['enabled'] = true
 default['littleobi']['cockpit']['enabled'] = true
-default['littleobi']['hashicrop']['enabled'] = false
+default['littleobi']['hashicrop']['enabled'] = true
 
 default['littleobi']['terraform']['install'] = true
 default['littleobi']['packer']['install'] =  true
@@ -61,7 +61,7 @@ default['littleobi']['pwgen-tools']['enabled'] = true
 
 default['littleobi']['tpmv2'] = true
 
-default['littleobi']['role']['primary'] = true
+default['littleobi']['role']['primary'] = false
 default['littleobi']['role']['worker'] = false
 default['littleobi']['node']['storage_cfg']['priv_administrator'] = "/home/administrator/.priv"
 default['littleobi']['node']['storage_cfg']['data_bulk'] = "/data/store" #Storage for Bulk Data this should be HDD only 

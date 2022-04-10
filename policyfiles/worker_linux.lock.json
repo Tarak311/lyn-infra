@@ -1,5 +1,5 @@
 {
-  "revision_id": "70cfa7a83a1be105daf45929bdcf78c3d4b023c313bd9cd111327e6764c0531d",
+  "revision_id": "8db8f115fdfecf73327b756b1a6b568fd8955f0bf81767363fb7bb42a81c286d",
   "name": "worker_linux",
   "run_list": [
     "recipe[os-hardening::default]",
@@ -34,14 +34,14 @@
     },
     "littleobi": {
       "version": "0.1.0",
-      "identifier": "1a3b2036d07bf3fbee01a55bcc04cff457ec0444",
-      "dotted_decimal_identifier": "7383358939102195.70911909991009284.228648354055236",
+      "identifier": "c9317d4b4289d3c516949c92843e647fc18b119c",
+      "dotted_decimal_identifier": "56630884522166739.55475397949817918.110499870740892",
       "source": "../cookbooks/littleobi",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "41e723a8aed569a659d41024cee4dea6d14ce7d3",
+        "revision": "558e0a549647c9e833a81fdb0ba19a5727fae64d",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -54,14 +54,14 @@
     },
     "littleobi-kube": {
       "version": "0.0.1",
-      "identifier": "055a92d0e600db61ab80a46b1f6e026526e05f5b",
-      "dotted_decimal_identifier": "1506961500012763.27491641743581038.2633467191131",
+      "identifier": "c42801b171a623d732d06fdd311ce762371020a4",
+      "dotted_decimal_identifier": "55213083172382243.60572990804144412.254409016615076",
       "source": "../cookbooks/littleobi-kube",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "https://github.com/Tarak311/lyn-infra.git",
-        "revision": "41e723a8aed569a659d41024cee4dea6d14ce7d3",
+        "revision": "558e0a549647c9e833a81fdb0ba19a5727fae64d",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
@@ -361,10 +361,6 @@
         ],
         [
           "firewalld",
-          ">= 0.0.0"
-        ],
-        [
-          "yum-centos",
           ">= 0.0.0"
         ],
         [

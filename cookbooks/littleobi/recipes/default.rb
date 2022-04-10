@@ -4,10 +4,12 @@
 #
 # Copyright:: 2021, The Authors, All Rights Reserved.
 
+include_recipe 'littleobi::reinit.base'
+include_recipe 'littleobi::config.user'
 include_recipe 'yum::default'
 
 
-include_recipe 'littleobi::config.bento'
+#include_recipe 'littleobi::config.bento'
 include_recipe 'littleobi::config.network'
 
 
@@ -23,7 +25,7 @@ include_recipe 'littleobi::reinit.base'
 include_recipe 'littleobi::pkg.install.vscode'
 include_recipe 'littleobi::pkg.install.hashicrop'
 include_recipe 'littleobi-kube::default'
-include_recipe 'littleobi::pkg.install.gns3'
+#include_recipe 'littleobi::pkg.install.gns3'
 include_recipe 'littleobi::pkg.install.glusterfs'
 include_recipe 'littleobi::config.glusterfs'
 include_recipe 'littleobi::reinit.base'
